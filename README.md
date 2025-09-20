@@ -63,6 +63,8 @@ Frontend (React) ← HTTP/REST → Backend (FastAPI) ← SQLAlchemy → Database
 
 ### **⚡ Guia Rápido (Instalação Completa)**
 
+> 🪟 **USUÁRIOS WINDOWS**: Se estiver usando Windows, consulte o arquivo [`WINDOWS_SETUP.md`](./WINDOWS_SETUP.md) para instruções específicas e solução de problemas comuns.
+
 #### **1. 📥 Clone o Repositório**
 ```bash
 git clone https://github.com/RickCunha-dev/sitenovo.git
@@ -88,6 +90,21 @@ uvicorn main:app --reload --port 8001
 
 #### **3. ⚛️ Configurar e Iniciar Frontend**
 **Em outro terminal:**
+
+**📋 IMPORTANTE - Windows PowerShell:**
+```powershell
+# Se estiver no Windows, use estes comandos:
+# Navegar para o frontend (comando exato)
+Push-Location ".\HACKATHON-REACT"
+
+# Instalar dependências Node.js
+npm install
+
+# Iniciar servidor de desenvolvimento
+npm run dev
+```
+
+**📋 Para Linux/Mac:**
 ```bash
 # Navegar para o frontend
 cd HACKATHON-REACT
@@ -138,6 +155,33 @@ uvicorn main:app --reload --port 8002
 # Frontend - mudar porta:
 npm run dev -- --port 5174
 ```
+
+#### **❌ ERRO COMUM: "package.json não encontrado" no Windows**
+```powershell
+# SOLUÇÃO: Use Push-Location em vez de cd
+Push-Location ".\HACKATHON-REACT"
+npm run dev
+
+# OU use o caminho completo:
+Push-Location "C:\caminho\para\seu\projeto\sitenovo\HACKATHON-REACT"
+npm run dev
+```
+
+#### **❌ ERRO: "A conexão com localhost foi recusada"**
+```bash
+# 1. Verifique se o servidor está rodando
+# 2. Se não estiver, reinicie:
+cd HACKATHON-REACT
+npm run dev
+
+# 3. Verifique se a porta 5173 não está ocupada
+```
+
+#### **✅ PROBLEMA RESOLVIDO: Imagens não carregam após git clone**
+**JÁ CORRIGIDO!** As imagens foram reorganizadas e são compatíveis cross-platform:
+- ✅ Nomes sem espaços ou acentos  
+- ✅ Caminhos padronizados em `/public/images/`
+- ✅ Funciona em Windows, Linux e Mac
 
 #### **Problema: Dependências não instaladas**
 ```bash

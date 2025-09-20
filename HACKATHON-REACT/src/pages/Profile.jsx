@@ -3,9 +3,7 @@ import { useAuth } from '../contexts/AuthContext';
 import styles from './Profile.module.css';
 
 // Importações das imagens principais
-import logoImg from '../images/Logo padrão.png';
-import appDeliveryImg from '../images/app delivery.png';
-import sistemaWebImg from '../images/sistema web.jpg';
+import logoImg from '../images/logo-padrao.png';
 
 // Importações dos ícones
 import instagramIcon from '../icons/instagram.png';
@@ -151,31 +149,25 @@ export default function Profile({ onNavigate }) {
         localStorage.setItem('userProfile', JSON.stringify(defaultUserData));
       }
 
-      // Carregar repositórios
-      const savedReposData = localStorage.getItem('userRepositories');
-      if (savedReposData) {
-        setRepositories(JSON.parse(savedReposData));
-      } else {
-        // Repositórios padrão
-        const defaultRepos = [
-          {
-            id: 'repo-1',
-            name: 'E-commerce Platform',
-            description: 'Plataforma completa de e-commerce desenvolvida com React e Node.js, incluindo sistema de pagamentos, carrinho de compras e dashboard administrativo.',
-            image: appDeliveryImg,
-            link: 'https://github.com/ricardo/ecommerce'
-          },
-          {
-            id: 'repo-2',
-            name: 'Task Manager App',
-            description: 'Aplicativo de gerenciamento de tarefas com interface moderna e funcionalidades avançadas de organização.',
-            image: sistemaWebImg,
-            link: 'https://github.com/ricardo/task-manager'
-          }
-        ];
-        setRepositories(defaultRepos);
-        localStorage.setItem('userRepositories', JSON.stringify(defaultRepos));
-      }
+      // Carregar repositórios - sempre usar repositórios padrão com imagens corretas
+      const defaultRepos = [
+        {
+          id: 'repo-1',
+          name: 'E-commerce Platform',
+          description: 'Plataforma completa de e-commerce desenvolvida com React e Node.js, incluindo sistema de pagamentos, carrinho de compras e dashboard administrativo.',
+          image: '/images/app-delivery.png',
+          link: 'https://github.com/ricardo/ecommerce'
+        },
+        {
+          id: 'repo-2',
+          name: 'Task Manager App',
+          description: 'Aplicativo de gerenciamento de tarefas com interface moderna e funcionalidades avançadas de organização.',
+          image: '/images/sistema-web.jpg',
+          link: 'https://github.com/ricardo/task-manager'
+        }
+      ];
+      setRepositories(defaultRepos);
+      localStorage.setItem('userRepositories', JSON.stringify(defaultRepos));
     } catch (error) {
       console.error('Erro ao carregar dados:', error);
     } finally {

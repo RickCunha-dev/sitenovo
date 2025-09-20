@@ -43,7 +43,7 @@ body::before {
     content: "";
     position: absolute;
     inset: 120px 45% 0 0; 
-    background: url('../Imagens/login.png') left center no-repeat;
+    background: url('../public/images/login.png') left center no-repeat;
     background-size: cover; 
     z-index: 0;
 }

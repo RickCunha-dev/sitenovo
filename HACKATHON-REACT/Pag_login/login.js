@@ -1,16 +1,19 @@
-document.querySelectorAll('.input-olho').forEach(function(div) {
-    const input = div.querySelector('input');
-    const olho = div.querySelector('.olhinho');
-    olho.addEventListener('click', function() {
-        if (input.type === 'password') {
-            input.type = 'text';
-            olho.src = '../Icones/olhoaberto.png';
-        } else {
-            input.type = 'password';
-            olho.src = '../Icones/olhofechado.png';
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.input-olho').forEach(function(div) {
+        const input = div.querySelector('input');
+        const olho = div.querySelector('.olhinho');
+        olho.addEventListener('click', function() {
+            if (input.type === 'password') {
+                input.type = 'text';
+                olho.src = '../public/icons/olhoaberto.png';
+            } else {
+                input.type = 'password';
+                olho.src = '../public/icons/olhofechado.png';
+            }
+        });
+    });
 });
-});
+
 // Mascara CPF/CNPJ
 document.getElementById('cpf').addEventListener('input', function (e) {
     var valor = e.target.value.replace(/\D/g, '');

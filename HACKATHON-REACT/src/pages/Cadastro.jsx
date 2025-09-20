@@ -109,7 +109,7 @@ export default function Cadastro({ onNavigate }) {
     <div className={styles.cadastroPage}>
       <header className={styles.logo}>
         <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>
-          <img src="/images/Logo padrão.png" alt="Logo" />
+          <img src="/images/logo-padrao.png" alt="Logo" />
         </a>
       </header>
 

@@ -3,7 +3,7 @@ import { useAuth } from '../contexts/AuthContext';
 import styles from './Blog.module.css';
 
 // Importações das imagens
-import logoImg from '../images/Logo padrão.png';
+import logoImg from '../images/logo-padrao.png';
 
 const Blog = ({ onNavigate }) => {
   const { user, isAuthenticated, logout } = useAuth();
@@ -34,55 +34,55 @@ const Blog = ({ onNavigate }) => {
     {
       id: 1,
       title: "Como Criar um portfólio profissional em 5 passos",
-      image: "/imagens_blog/exame.png",
+      image: "/images/exame.png",
       link: "https://exame.com/carreira/guia-de-carreira/5-dicas-para-criar-um-portfolio-profissional-atraente/?utm_source=chatgpt.com"
     },
     {
       id: 2,
       title: "Portfólio: porquê e quando é importante ter um",
-      image: "/imagens_blog/getninjas.png",
+      image: "/images/getninjas.png",
       link: "https://blog.getninjas.com.br/portfolio-porque-e-quando-e-importante-ter-um/"
     },
     {
       id: 3,
       title: "Melhores plataformas para criar seu portfólio gratuito",
-      image: "/imagens_blog/glassdoor.png",
+      image: "/images/glassdoor.png",
       link: "https://www.glassdoor.com.br/blog/5-sites-gratuitos-para-criar-portfolio-online/?utm_source=chatgpt.com"
     },
     {
       id: 4,
       title: "Dicas de especialistas para escrever uma descrição de projeto com modelos gratuitos",
-      image: "/imagens_blog/smartsheet.png",
+      image: "/images/smartsheet.png",
       link: "https://pt.smartsheet.com/content/project-description"
     },
     {
       id: 5,
       title: "Erros comuns em portfólios de design e como evitar",
-      image: "/imagens_blog/erroscomuns_unife.png",
+      image: "/images/erroscomuns_unife.png",
       link: "https://www.unifecaf.com.br/post/10-erros-no-portfolio-que-podem-te-prejudicar?utm_source=chatgpt.com"
     },
     {
       id: 6,
       title: "Design responsivo: como garantir que seu portfólio funcione em qualquer tela",
-      image: "/imagens_blog/webshare.png",
+      image: "/images/webshare.png",
       link: "https://www.webshare.com.br/blog/design-responsivo/?utm_source=chatgpt.com"
     },
     {
       id: 7,
       title: "Quem é seu público-alvo (recrutadores, clientes, agências)?",
-      image: "/imagens_blog/semrush.png",
+      image: "/images/semrush.png",
       link: "https://pt.semrush.com/blog/publico-alvo/"
     },
     {
       id: 8,
       title: "O que é portfólio, quais os tipos e como criar um site de portfólio?",
-      image: "/imagens_blog/link_nacional.png",
+      image: "/images/link_nacional.png",
       link: "https://www.linknacional.com.br/blog/o-que-e-portfolio/?srsltid=AfmBOooq18EeMmyJKbBiOfmT5_XKV6Gr0gqGoBCmXQHHfaGGM1t1h30k"
     },
     {
       id: 9,
       title: "Portfólio profissional: o que é, tipos e como montar o seu para destacar sua experiência no mercado",
-      image: "/imagens_blog/ponto_tel_ultima.png",
+      image: "/images/ponto_tel_ultima.png",
       link: "https://www.pontotel.com.br/portfolio-profissional/"
     }
   ];

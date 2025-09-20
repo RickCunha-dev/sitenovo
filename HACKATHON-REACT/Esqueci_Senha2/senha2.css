@@ -71,7 +71,7 @@ body::before {
     content: "";
     position: absolute;
     inset: 120px 45% 0 0;
-    background: url('../Imagens/redefinir senha.png') left center no-repeat;
+    background: url('../public/images/redefinir-senha.png') left center no-repeat;
     background-size: cover;
     z-index: 0;
 }

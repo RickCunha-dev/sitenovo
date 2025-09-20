@@ -4,10 +4,10 @@ document.querySelectorAll('.input-olho').forEach(function(div) {
     olho.addEventListener('click', function() {
         if (input.type === 'password') {
             input.type = 'text';
-            olho.src = '../Icones/olhoaberto.png';
+            olho.src = '../public/icons/olhoaberto.png';
         } else {
             input.type = 'password';
-            olho.src = '../Icones/olhofechado.png';
+            olho.src = '../public/icons/olhofechado.png';
         }
     });
 });

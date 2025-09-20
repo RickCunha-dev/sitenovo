@@ -3,7 +3,7 @@ import { useAuth } from '../contexts/AuthContext';
 import styles from './UserArea.module.css';
 
 // Importações das imagens
-import logoImg from '../images/Logo padrão.png';
+import logoImg from '../images/logo-padrao.png';
 import instagramIcon from '../icons/instagram.png';
 import whatsappIcon from '../icons/whatsapp.png';
 import linkedinIcon from '../icons/linkedin.png';

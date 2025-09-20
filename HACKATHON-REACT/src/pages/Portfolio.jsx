@@ -3,7 +3,7 @@ import { useAuth } from '../contexts/AuthContext';
 import styles from './Portfolio.module.css';
 
 // Importações das imagens principais
-import logoImg from '../images/Logo padrão.png';
+import logoImg from '../images/logo-padrao.png';
 
 // Importações dos ícones
 import instagramIcon from '../icons/instagram.png';

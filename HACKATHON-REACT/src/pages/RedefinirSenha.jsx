@@ -37,14 +37,14 @@ export default function RedefinirSenha({ onNavigate }) {
       <header>
         <div className={styles['logo-in']}>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>
-            <img src="/images/Logo padrão.png" alt="logo-infinity" className={styles['logo-in']} />
+            <img src="/images/logo-padrao.png" alt="logo-infinity" className={styles['logo-in']} />
           </a>
         </div>
       </header>
 
       <div className={styles.container}>
         <div className={styles.imagem}>
-          <img src="/images/redefinir senha.png" alt="Ilustração de um cadeado e chave para redefinir a senha" />
+          <img src="/images/redefinir-senha.png" alt="Ilustração de um cadeado e chave para redefinir a senha" />
         </div>
 
         <div className={styles.formulario}>

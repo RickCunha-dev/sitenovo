@@ -80,7 +80,7 @@ body {
 
 .image {
     flex: 3;
-    background: url(../Imagens/cadastre-se.png);
+    background: url(../public/images/cadastre-se.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

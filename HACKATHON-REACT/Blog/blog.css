@@ -229,7 +229,7 @@ header {
 .carrossel {
     width: 100%;
     height: var(--carrossel-altura);
-    background-image: url(../Imagens/blog.png);
+    background-image: url(../public/images/blog.png);
     background-size: cover;
     background-position: center;
     color: var(--cor-branco);

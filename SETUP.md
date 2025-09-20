@@ -51,6 +51,19 @@ python main.py
 
 ### **4. ⚛️ Setup Frontend (Terminal 2)**
 
+**🪟 Para Windows PowerShell:**
+```powershell
+# Navegar para frontend (comando específico Windows)
+Push-Location ".\HACKATHON-REACT"
+
+# Instalar dependências
+npm install
+
+# Iniciar desenvolvimento
+npm run dev
+```
+
+**🐧 Para Linux/Mac:**
 ```bash
 # Navegar para frontend (novo terminal)
 cd HACKATHON-REACT
@@ -95,6 +108,34 @@ where py
 node --version
 
 # Reinstalar Node.js se necessário
+```
+
+### **❌ ERRO CRÍTICO: "package.json não encontrado" (Windows)**
+```powershell
+# PROBLEMA: O PowerShell não mudou diretório corretamente
+# SOLUÇÃO: Use Push-Location
+
+# ❌ NÃO funciona:
+cd HACKATHON-REACT
+npm run dev
+
+# ✅ FUNCIONA:
+Push-Location ".\HACKATHON-REACT"
+npm run dev
+
+# ✅ OU use caminho completo:
+Push-Location "C:\caminho\completo\para\sitenovo\HACKATHON-REACT"
+npm run dev
+```
+
+### **❌ Erro: "A conexão com localhost foi recusada"**
+```bash
+# 1. Verificar se servidor está ativo
+# 2. Reiniciar servidor:
+Push-Location ".\HACKATHON-REACT"
+npm run dev
+
+# 3. Verificar porta 5173 livre
 ```
 
 ### **❌ Porta já em uso**

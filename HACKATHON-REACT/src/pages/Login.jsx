@@ -77,7 +77,7 @@ export default function Login({ onNavigate }) {
     <div className={styles.loginPage}>
       <header className={styles.logo}>
         <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>
-          <img src="/images/Logo padrão.png" alt="logo-infinity" className={styles['logo-in']} />
+          <img src="/images/logo-padrao.png" alt="logo-infinity" className={styles['logo-in']} />
         </a>
       </header>
 

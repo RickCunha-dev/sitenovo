@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const src = icon.getAttribute('src') || '';
       const openSrc = src.includes('olhofechado')
         ? src.replace('olhofechado', 'olhoaberto')
-        : '../Icones/olhoaberto.png';
+        : '../public/icons/olhoaberto.png';
       const closedSrc = src.includes('olhoaberto')
         ? src.replace('olhoaberto', 'olhofechado')
-        : '../Icones/olhofechado.png';
+        : '../public/icons/olhofechado.png';
 
       icon.src = isVisible ? openSrc : closedSrc;
       icon.alt = isVisible ? 'Ocultar senha' : 'Mostrar senha';

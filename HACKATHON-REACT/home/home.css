@@ -180,7 +180,7 @@ header {
 }
 
 .hero {
-    background-image: url('../images/robo.png');
+    background-image: url('../public/images/robo.png');
     background-size: cover;
     background-position: center;
     text-align: left;
