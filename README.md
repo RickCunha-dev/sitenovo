@@ -52,34 +52,44 @@ Frontend (React) ← HTTP/REST → Backend (FastAPI) ← SQLAlchemy → Database
 
 ---
 
-## 🚀 Começando
+## 🚀 Como Rodar o Projeto
 
 ### **Pré-requisitos**
-- **Node.js** (v16+)
-- **Python** (v3.8+)
-- **Git**
+- **Node.js** (v16 ou superior) - [Download aqui](https://nodejs.org/)
+- **Python** (v3.8 ou superior) - [Download aqui](https://python.org/)
+- **Git** - [Download aqui](https://git-scm.com/)
 
-### **1. Clone o Repositório**
+---
+
+### **⚡ Guia Rápido (Instalação Completa)**
+
+#### **1. 📥 Clone o Repositório**
 ```bash
-git clone https://github.com/RickCunha-dev/HACKATHON-REACT.git
-cd HACKATHON-REACT
+git clone https://github.com/RickCunha-dev/sitenovo.git
+cd sitenovo
 ```
 
-### **2. Configurar Backend**
+#### **2. 🐍 Configurar e Iniciar Backend**
 ```bash
-# Instalar dependências Python
-pip install -r requirements.txt
-
 # Navegar para o backend
 cd Backend
 
+# Instalar dependências Python
+pip install -r requirements.txt
+
 # Iniciar servidor FastAPI
+python main.py
+# OU (dependendo da sua instalação):
+py main.py
+# OU:
 uvicorn main:app --reload --port 8001
 ```
+✅ **Backend rodando em**: http://127.0.0.1:8001
 
-### **3. Configurar Frontend**
+#### **3. ⚛️ Configurar e Iniciar Frontend**
+**Em outro terminal:**
 ```bash
-# Em outro terminal, navegar para o frontend
+# Navegar para o frontend
 cd HACKATHON-REACT
 
 # Instalar dependências Node.js
@@ -88,11 +98,57 @@ npm install
 # Iniciar servidor de desenvolvimento
 npm run dev
 ```
+✅ **Frontend rodando em**: http://localhost:5173
 
-### **4. Acessar a Aplicação**
-- **Frontend**: http://localhost:5173
-- **Backend API**: http://localhost:8001
-- **Documentação API**: http://localhost:8001/docs
+#### **4. 🌐 Acessar a Aplicação**
+- **🎨 Frontend**: http://localhost:5173
+- **🔧 Backend API**: http://127.0.0.1:8001
+- **📚 Documentação API**: http://127.0.0.1:8001/docs
+
+---
+
+### **🚨 Solução de Problemas Comuns**
+
+#### **Problema: Python não encontrado**
+```bash
+# Windows - usar py launcher:
+py main.py
+
+# Windows - instalar via Microsoft Store:
+python3 main.py
+
+# Windows - verificar PATH:
+where python
+```
+
+#### **Problema: npm não encontrado**
+```bash
+# Verificar instalação do Node.js:
+node --version
+npm --version
+
+# Reinstalar Node.js se necessário
+```
+
+#### **Problema: Porta já em uso**
+```bash
+# Backend - mudar porta:
+uvicorn main:app --reload --port 8002
+
+# Frontend - mudar porta:
+npm run dev -- --port 5174
+```
+
+#### **Problema: Dependências não instaladas**
+```bash
+# Backend - reinstalar:
+pip install --upgrade -r requirements.txt
+
+# Frontend - limpar cache e reinstalar:
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+```
 
 ---
 

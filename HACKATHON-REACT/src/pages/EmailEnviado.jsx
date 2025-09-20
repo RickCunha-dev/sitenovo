@@ -11,7 +11,7 @@ export default function EmailEnviado({ onNavigate }) {
       <header className={styles.header}>
         <div className={styles['logo-in']}>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>
-            <img src="/Imagens/Logo padrão.png" alt="logo-infinity" className={styles['logo-in']} />
+            <img src="/images/Logo padrão.png" alt="logo-infinity" className={styles['logo-in']} />
           </a>
         </div>
       </header>

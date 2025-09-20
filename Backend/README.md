@@ -1,47 +1,76 @@
 
-# Backend Hackathon
+# 🐍 Backend Hackathon
 
 API backend em Python com FastAPI, SQLAlchemy e autenticação JWT.
 
-## Funcionalidades
+## 🚀 Como Rodar o Backend
 
-- Cadastro e login de usuários (com validação de CPF, e-mail e senha)
-- Autenticação JWT (Bearer Token)
-- Consulta de dados do usuário autenticado
-- Hash de senha seguro com bcrypt
-- Integração com banco de dados SQLite (padrão, mas pode ser adaptado para MySQL)
-- Endpoints protegidos
+### **Pré-requisitos**
+- Python 3.8 ou superior
+- pip (gerenciador de pacotes Python)
 
-## Estrutura do Projeto
+### **📋 Passos para Execução**
 
-```
-Backend/
-├── db.py           # Configuração do banco de dados
-├── main.py         # Endpoints da API FastAPI
-├── models.py       # Modelos ORM (SQLAlchemy)
-├── schemas.py      # Schemas Pydantic
-├── security.py     # Funções de autenticação e token
-├── utils.py        # Funções auxiliares
-├── requirements.txt
-└── README.md
+#### **1. Instalar Dependências**
+```bash
+pip install -r requirements.txt
 ```
 
-## Endpoints Principais
+#### **2. Iniciar Servidor**
+```bash
+# Opção 1 (recomendada):
+python main.py
 
-- `POST /register` — Cadastro de novo usuário
-- `POST /login` — Login e geração de token JWT
-- `GET /users/me` — Consulta de dados do usuário autenticado
+# Opção 2 (Windows):
+py main.py
 
-## Como rodar
+# Opção 3 (manual):
+uvicorn main:app --reload --host 127.0.0.1 --port 8001
+```
 
-1. Instale as dependências:
-   ```
-   pip install -r requirements.txt
-   ```
-2. Inicie o servidor:
-   ```
-   uvicorn main:app --reload --host 127.0.0.1 --port 8001
-   ```
+#### **3. Verificar se está funcionando**
+- **API**: http://127.0.0.1:8001
+- **Documentação**: http://127.0.0.1:8001/docs
+- **Banco de dados**: `hackathon.db` será criado automaticamente
+
+### **🚨 Solução de Problemas**
+
+#### **Erro: Python não encontrado**
+```bash
+# Windows - usar py launcher:
+py main.py
+
+# Verificar instalação:
+python --version
+py --version
+```
+
+#### **Erro: pip não encontrado**
+```bash
+# Windows:
+python -m pip install -r requirements.txt
+
+# Linux/Mac:
+python3 -m pip install -r requirements.txt
+```
+
+#### **Erro: Porta 8001 já em uso**
+```bash
+# Usar porta alternativa:
+uvicorn main:app --reload --host 127.0.0.1 --port 8002
+```
+
+#### **Erro: ModuleNotFoundError**
+```bash
+# Reinstalar dependências:
+pip install --upgrade -r requirements.txt
+
+# Criar ambiente virtual (recomendado):
+python -m venv venv
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # Linux/Mac
+pip install -r requirements.txt
+```
 
 ## Autenticação
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from '../contexts/AuthContext';
 import styles from './Portfolio.module.css';
 
 // Importações das imagens principais
@@ -10,6 +11,9 @@ import whatsappIcon from '../icons/whatsapp.png';
 import linkedinIcon from '../icons/linkedin.png';
 
 export default function Portfolio({ onNavigate }) {
+  // Hook de autenticação
+  const { isAuthenticated, user, logout } = useAuth();
+  
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [editMode, setEditMode] = useState(false);
@@ -192,9 +196,19 @@ export default function Portfolio({ onNavigate }) {
 
           <div className={styles['header-right']}>
             <div className={styles['header-buttons']}>
-              <a href="#login" className={`${styles['header-btn']} ${styles['btn-login']}`}>Login</a>
-              <a href="#cadastro" className={`${styles['header-btn']} ${styles['btn-cadastro']}`}>Cadastre-se</a>
-              <a href="#profile" className={styles['btn-user-icon']} aria-label="Perfil do usuário">
+              {isAuthenticated ? (
+                <>
+                  <span className={styles['user-greeting']}>Olá, {user?.nome_completo?.split(' ')[0] || 'Usuário'}!</span>
+                  <a href="#profile" className={`${styles['header-btn']} ${styles['btn-profile']}`} onClick={(e) => { e.preventDefault(); onNavigate('profile'); }}>Perfil</a>
+                  <button className={`${styles['header-btn']} ${styles['btn-logout']}`} onClick={logout}>Sair</button>
+                </>
+              ) : (
+                <>
+                  <a href="#login" className={`${styles['header-btn']} ${styles['btn-login']}`} onClick={(e) => { e.preventDefault(); onNavigate('login'); }}>Login</a>
+                  <a href="#cadastro" className={`${styles['header-btn']} ${styles['btn-cadastro']}`} onClick={(e) => { e.preventDefault(); onNavigate('cadastro'); }}>Cadastre-se</a>
+                </>
+              )}
+              <a href="#profile" className={styles['btn-user-icon']} aria-label="Área do usuário" onClick={(e) => { e.preventDefault(); onNavigate(isAuthenticated ? 'profile' : 'login'); }}>
                 <i className="fa-solid fa-user"></i>
               </a>
             </div>
@@ -215,13 +229,23 @@ export default function Portfolio({ onNavigate }) {
             <div className={styles['mobile-logo-wrapper']}>
               <img src={logoImg} alt="Logo Infinity School" />
             </div>
-            <a href="#home" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Home</a>
-            <a href="#explorar" onClick={(e) => { e.preventDefault(); onNavigate('explore'); }}>Explorar</a>
-            <a href="#blog" onClick={(e) => { e.preventDefault(); onNavigate('blog'); }}>Blog</a>
+            <a href="#home" onClick={(e) => { e.preventDefault(); onNavigate('home'); setMenuOpen(false); }}>Home</a>
+            <a href="#explorar" onClick={(e) => { e.preventDefault(); onNavigate('explore'); setMenuOpen(false); }}>Explorar</a>
+            <a href="#blog" onClick={(e) => { e.preventDefault(); onNavigate('blog'); setMenuOpen(false); }}>Blog</a>
             <hr className={styles['mobile-menu-divider']} />
-            <a href="#login" className={`${styles['header-btn']} ${styles['btn-login']}`}>Login</a>
-            <a href="#cadastro" className={`${styles['header-btn']} ${styles['btn-cadastro']}`}>Cadastre-se</a>
-            <a href="#profile" className={styles['btn-user-icon']} aria-label="Perfil do usuário">
+            {isAuthenticated ? (
+              <>
+                <span className={styles['user-greeting']}>Olá, {user?.nome_completo?.split(' ')[0] || 'Usuário'}!</span>
+                <a href="#profile" className={`${styles['header-btn']} ${styles['btn-profile']}`} onClick={(e) => { e.preventDefault(); onNavigate('profile'); setMenuOpen(false); }}>Perfil</a>
+                <button className={`${styles['header-btn']} ${styles['btn-logout']}`} onClick={() => { logout(); setMenuOpen(false); }}>Sair</button>
+              </>
+            ) : (
+              <>
+                <a href="#login" className={`${styles['header-btn']} ${styles['btn-login']}`} onClick={(e) => { e.preventDefault(); onNavigate('login'); setMenuOpen(false); }}>Login</a>
+                <a href="#cadastro" className={`${styles['header-btn']} ${styles['btn-cadastro']}`} onClick={(e) => { e.preventDefault(); onNavigate('cadastro'); setMenuOpen(false); }}>Cadastre-se</a>
+              </>
+            )}
+            <a href="#profile" className={styles['btn-user-icon']} aria-label="Área do usuário" onClick={(e) => { e.preventDefault(); onNavigate(isAuthenticated ? 'profile' : 'login'); setMenuOpen(false); }}>
               <i className="fa-solid fa-user"></i>
             </a>
           </div>

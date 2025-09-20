@@ -11,16 +11,16 @@ import whatsappIcon from '../icons/whatsapp.png';
 import linkedinIcon from '../icons/linkedin.png';
 
 // Importando as imagens dos portfólios
-import sistemaWebImg from '/images/sistema web.jpg';
-import identidadeVisualImg from '/images/identidade visual.jpg';
-import appDeliveryImg from '/images/app delivery.png';
-import appDelivery2Img from '/images/app delivery 2.png';
-import producaoVideoImg from '/images/producao de video.jpg';
-import campanhaDigitalImg from '/images/campanha digital.webp';
-import ensaioFotograficoImg from '/images/ensaio fotografico.jpeg';
-import identidadeVisual2Img from '/images/identidade visual 2.png';
-import criacaoLogoImg from '/images/criacao de logo.png';
-import hackathonImg from '/images/HACKATHON.jpg';
+import sistemaWebImg from '../images/sistema web.jpg';
+import identidadeVisualImg from '../images/identidade visual.jpg';
+import appDeliveryImg from '../images/app delivery.png';
+import appDelivery2Img from '../images/app delivery 2.png';
+import producaoVideoImg from '../images/producao de video.jpg';
+import campanhaDigitalImg from '../images/campanha digital.webp';
+import ensaioFotograficoImg from '../images/ensaio fotografico.jpeg';
+import identidadeVisual2Img from '../images/identidade visual 2.png';
+import criacaoLogoImg from '../images/criacao de logo.png';
+import hackathonImg from '../images/HACKATHON.jpg';
 
 const portfolioData = [
   {

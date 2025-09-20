@@ -4,6 +4,8 @@ import styles from './Profile.module.css';
 
 // Importações das imagens principais
 import logoImg from '../images/Logo padrão.png';
+import appDeliveryImg from '../images/app delivery.png';
+import sistemaWebImg from '../images/sistema web.jpg';
 
 // Importações dos ícones
 import instagramIcon from '../icons/instagram.png';
@@ -160,14 +162,14 @@ export default function Profile({ onNavigate }) {
             id: 'repo-1',
             name: 'E-commerce Platform',
             description: 'Plataforma completa de e-commerce desenvolvida com React e Node.js, incluindo sistema de pagamentos, carrinho de compras e dashboard administrativo.',
-            image: '/images/app delivery.png',
+            image: appDeliveryImg,
             link: 'https://github.com/ricardo/ecommerce'
           },
           {
             id: 'repo-2',
             name: 'Task Manager App',
             description: 'Aplicativo de gerenciamento de tarefas com interface moderna e funcionalidades avançadas de organização.',
-            image: '/images/sistema web.jpg',
+            image: sistemaWebImg,
             link: 'https://github.com/ricardo/task-manager'
           }
         ];
@@ -675,16 +677,16 @@ export default function Profile({ onNavigate }) {
                     </button>
                   </div>
                   
-                  <a href={repo.link} target="_blank" rel="noopener noreferrer" className={styles['repo-link-image']}>
+                  <div onClick={() => onNavigate('portfolio')} className={styles['repo-link-image']} style={{cursor: 'pointer'}}>
                     <div className={styles['repo-card-image-container']}>
                       <img src={repo.image || ''} alt={`Imagem do projeto ${repo.name}`} />
                     </div>
-                  </a>
+                  </div>
                   
                   <h3>
-                    <a href={repo.link} target="_blank" rel="noopener noreferrer">
+                    <div onClick={() => onNavigate('portfolio')} style={{cursor: 'pointer', color: 'inherit', textDecoration: 'none'}}>
                       {repo.name}
-                    </a>
+                    </div>
                   </h3>
                   <p>{repo.description || 'Sem descrição.'}</p>
                 </div>

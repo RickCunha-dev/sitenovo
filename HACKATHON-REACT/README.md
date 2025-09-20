@@ -41,13 +41,71 @@ src/
 └── App.jsx
 ```
 
-## Como rodar
+## 🚀 Como Rodar o Frontend
 
-1. Instale as dependências:
-  ```
-  npm install
-  ```
-2. Inicie o servidor de desenvolvimento:
+### **Pré-requisitos**
+- Node.js (v16 ou superior)
+- npm (vem com Node.js)
+
+### **📋 Passos para Execução**
+
+#### **1. Instalar Dependências**
+```bash
+npm install
+```
+
+#### **2. Iniciar Servidor de Desenvolvimento**
+```bash
+npm run dev
+```
+
+#### **3. Acessar a Aplicação**
+- Frontend: http://localhost:5173
+- A página abrirá automaticamente no navegador
+
+### **🔧 Scripts Disponíveis**
+
+```bash
+# Desenvolvimento
+npm run dev          # Inicia servidor de desenvolvimento
+
+# Produção
+npm run build        # Gera build otimizado
+npm run preview      # Preview da build de produção
+
+# Linting
+npm run lint         # Verifica código com ESLint
+```
+
+### **⚠️ Importante**
+- **Backend obrigatório**: O frontend precisa do backend rodando na porta 8001
+- **CORS configurado**: API aceita requisições do frontend local
+- **Autenticação**: Sistema JWT integrado com backend
+
+### **🚨 Solução de Problemas**
+
+#### **Erro: ECONNREFUSED 127.0.0.1:8001**
+```bash
+# Backend não está rodando
+# Solução: Iniciar o backend primeiro:
+cd ../Backend
+python main.py
+```
+
+#### **Erro: Module not found**
+```bash
+# Dependências não instaladas
+# Solução:
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+```
+
+#### **Erro: Porta 5173 já em uso**
+```bash
+# Solução - usar porta alternativa:
+npm run dev -- --port 5174
+```
   ```
   npm run dev
   ```
