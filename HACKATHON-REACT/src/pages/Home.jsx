@@ -129,11 +129,6 @@ export default function Home({ onNavigate }) {
   
   // Hook de autenticação
   const { isAuthenticated, user, logout } = useAuth();
-  
-  // Função para obter primeiro nome
-  const getFirstName = (fullName) => {
-    return fullName ? fullName.split(' ')[0] : 'Usuário';
-  };
 
   // Toggle do menu mobile
   const toggleMenu = () => {
@@ -227,47 +222,42 @@ export default function Home({ onNavigate }) {
             
             {/* Botões aparecem apenas no menu mobile */}
             <div className={styles['header-buttons']}>
-              {!isAuthenticated ? (
+              {isAuthenticated ? (
+                <>
+                  <span className={styles['user-greeting']}>Olá, {user?.nome_completo?.split(' ')[0] || 'Usuário'}!</span>
+                  <a href="#profile" className={`${styles.btn} ${styles['btn-profile']}`} onClick={(e) => { e.preventDefault(); onNavigate('profile'); }}>Perfil</a>
+                  <button className={`${styles.btn} ${styles['btn-logout']}`} onClick={logout}>Sair</button>
+                </>
+              ) : (
                 <>
                   <a href="#login" className={`${styles.btn} ${styles['btn-login']}`} onClick={(e) => { e.preventDefault(); onNavigate('login'); }}>Login</a>
                   <a href="#cadastro" className={`${styles.btn} ${styles['btn-cadastro']}`} onClick={(e) => { e.preventDefault(); onNavigate('cadastro'); }}>Cadastre-se</a>
                 </>
-              ) : (
-                <>
-                  <a href="#profile" className={styles['user-btn']} aria-label="Área do usuário"
-                     onClick={(e) => { e.preventDefault(); onNavigate('profile'); }}>
-                    <i className="fa-solid fa-user"></i> Perfil
-                  </a>
-                  <a href="#logout" className={`${styles.btn} ${styles['btn-logout']}`} 
-                     onClick={(e) => { e.preventDefault(); logout(); }}>
-                    Sair
-                  </a>
-                </>
               )}
+              <a href="#profile" className={styles['user-btn']} aria-label="Área do usuário"
+                 onClick={(e) => { e.preventDefault(); onNavigate(isAuthenticated ? 'profile' : 'login'); }}>
+                <i className="fa-solid fa-user"></i>
+              </a>
             </div>
           </nav>
 
           <div className={styles['header-buttons']}>
-            {!isAuthenticated ? (
+            {isAuthenticated ? (
+              <>
+                <span className={styles['user-greeting']}>Olá, {user?.nome_completo?.split(' ')[0] || 'Usuário'}!</span>
+                <a href="#profile" className={`${styles.btn} ${styles['btn-profile']}`} onClick={(e) => { e.preventDefault(); onNavigate('profile'); }}>Perfil</a>
+                <button className={`${styles.btn} ${styles['btn-logout']}`} onClick={logout}>Sair</button>
+              </>
+            ) : (
               <>
                 <a href="#login" className={`${styles.btn} ${styles['btn-login']}`} onClick={(e) => { e.preventDefault(); onNavigate('login'); }}>Login</a>
                 <a href="#cadastro" className={`${styles.btn} ${styles['btn-cadastro']}`} onClick={(e) => { e.preventDefault(); onNavigate('cadastro'); }}>Cadastre-se</a>
               </>
-            ) : (
-              <>
-                <span className={styles['user-greeting']}>
-                  Olá, {getFirstName(user?.nome_completo)}!
-                </span>
-                <a href="#profile" className={styles['user-btn']} aria-label="Área do usuário"
-                   onClick={(e) => { e.preventDefault(); onNavigate('profile'); }}>
-                  <i className="fa-solid fa-user"></i>
-                </a>
-                <a href="#logout" className={`${styles.btn} ${styles['btn-logout']}`} 
-                   onClick={(e) => { e.preventDefault(); logout(); }}>
-                  Sair
-                </a>
-              </>
             )}
+            <a href="#profile" className={styles['user-btn']} aria-label="Área do usuário"
+               onClick={(e) => { e.preventDefault(); onNavigate(isAuthenticated ? 'profile' : 'login'); }}>
+              <i className="fa-solid fa-user"></i>
+            </a>
           </div>
 
           <button 

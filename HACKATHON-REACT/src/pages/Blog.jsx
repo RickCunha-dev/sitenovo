@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useAuth } from '../contexts/AuthContext';
 import styles from './Blog.module.css';
 
 // Importações das imagens
 import logoImg from '../images/Logo padrão.png';
 
 const Blog = ({ onNavigate }) => {
+  const { user, isAuthenticated, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
 
@@ -104,26 +106,46 @@ const Blog = ({ onNavigate }) => {
             
             {/* Botões aparecem apenas no menu mobile */}
             <div className={styles['header-buttons']}>
-              <a href="#login" className={`${styles.btn} ${styles['btn-login']}`} onClick={(e) => { e.preventDefault(); onNavigate('login'); setIsMenuOpen(false); }}>
-                Login
-              </a>
-              <a href="#cadastro" className={`${styles.btn} ${styles['btn-cadastro']}`} onClick={(e) => { e.preventDefault(); onNavigate('cadastro'); setIsMenuOpen(false); }}>
-                Cadastre-se
-              </a>
-              <a href="#profile" className={styles['user-btn']} aria-label="Área do usuário" onClick={(e) => { e.preventDefault(); onNavigate('profile'); setIsMenuOpen(false); }}>
+              {isAuthenticated ? (
+                <>
+                  <span className={styles['user-greeting']}>Olá, {user?.nome_completo?.split(' ')[0] || 'Usuário'}!</span>
+                  <a href="#profile" className={`${styles.btn} ${styles['btn-profile']}`} onClick={(e) => { e.preventDefault(); onNavigate('profile'); setIsMenuOpen(false); }}>Perfil</a>
+                  <button className={`${styles.btn} ${styles['btn-logout']}`} onClick={() => { logout(); setIsMenuOpen(false); }}>Sair</button>
+                </>
+              ) : (
+                <>
+                  <a href="#login" className={`${styles.btn} ${styles['btn-login']}`} onClick={(e) => { e.preventDefault(); onNavigate('login'); setIsMenuOpen(false); }}>
+                    Login
+                  </a>
+                  <a href="#cadastro" className={`${styles.btn} ${styles['btn-cadastro']}`} onClick={(e) => { e.preventDefault(); onNavigate('cadastro'); setIsMenuOpen(false); }}>
+                    Cadastre-se
+                  </a>
+                </>
+              )}
+              <a href="#profile" className={styles['user-btn']} aria-label="Área do usuário" onClick={(e) => { e.preventDefault(); onNavigate(isAuthenticated ? 'profile' : 'login'); setIsMenuOpen(false); }}>
                 <i className="fa-solid fa-user"></i>
               </a>
             </div>
           </nav>
 
           <div className={styles['header-buttons']}>
-            <a href="#login" className={`${styles.btn} ${styles['btn-login']}`} onClick={(e) => { e.preventDefault(); onNavigate('login'); }}>
-              Login
-            </a>
-            <a href="#cadastro" className={`${styles.btn} ${styles['btn-cadastro']}`} onClick={(e) => { e.preventDefault(); onNavigate('cadastro'); }}>
-              Cadastre-se
-            </a>
-            <a href="#profile" className={styles['user-btn']} aria-label="Área do usuário" onClick={(e) => { e.preventDefault(); onNavigate('profile'); }}>
+            {isAuthenticated ? (
+              <>
+                <span className={styles['user-greeting']}>Olá, {user?.nome_completo?.split(' ')[0] || 'Usuário'}!</span>
+                <a href="#profile" className={`${styles.btn} ${styles['btn-profile']}`} onClick={(e) => { e.preventDefault(); onNavigate('profile'); }}>Perfil</a>
+                <button className={`${styles.btn} ${styles['btn-logout']}`} onClick={logout}>Sair</button>
+              </>
+            ) : (
+              <>
+                <a href="#login" className={`${styles.btn} ${styles['btn-login']}`} onClick={(e) => { e.preventDefault(); onNavigate('login'); }}>
+                  Login
+                </a>
+                <a href="#cadastro" className={`${styles.btn} ${styles['btn-cadastro']}`} onClick={(e) => { e.preventDefault(); onNavigate('cadastro'); }}>
+                  Cadastre-se
+                </a>
+              </>
+            )}
+            <a href="#profile" className={styles['user-btn']} aria-label="Área do usuário" onClick={(e) => { e.preventDefault(); onNavigate(isAuthenticated ? 'profile' : 'login'); }}>
               <i className="fa-solid fa-user"></i>
             </a>
           </div>
