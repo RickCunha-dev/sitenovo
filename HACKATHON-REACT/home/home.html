@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity School</title>
+    <link rel="icon" type="image/svg+xml" href="../Imagens/infinity.png">
+    <link rel="icon" type="image/png" href="../images/infinity.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="../images/infinity.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="../images/Logo padrão.png" alt="Logo Infinity School">
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <div class="mobile-logo">
+                    <img src="../images/Logo padrão.png" alt="Logo Infinity School">
+                </div>
+                <a href="../home/home.html">Home</a>
+                <a href="../PagExplore/inspire-se.html">Explorar</a>
+                <a href="../Blog/blog.html">Blog</a>
+            </nav>
+
+            <div class="header-buttons" id="header-buttons">
+                <a href="../Pag_login/login.html" class="btn btn-login">Login</a>
+                <a href="../Pag_Cadastro/cadastro.html" class="btn btn-cadastro">Cadastre-se</a>
+            </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Jornada Criativa</h1>
+                <p>Publique seus melhores projetos e seja visto pelas melhores empresas.</p>
+                <a href="../Pag_Cadastro/cadastro.html"><button class="btn btn-secondary">Começar</button></a>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="container video-container">
+                <img src="../images/tela inicial leve.gif" alt="Vídeo demonstrativo" class="video-placeholder">
+            </div>
+        </section>
+
+        <section class="tendencias">
+            <div class="container tendencias-container">
+                <div class="tendencias-text">
+                    <h2>Tendências que inspiram<br>Insights que transformam</h2>
+                    <p>Conectamos as novidades mais quentes do mercado com o passo a passo que vai elevar o nível do seu
+                        portfólio. Menos ruído, mais resultado. Prepare-se para a transformação.</p>
+                    <a href="../PagExplore/inspire-se.html"><button class="btn btn-secondary">Explore</button></a>
+                </div>
+                <div class="tendencias-image">
+                    <img src="../images/mulher_robo.png" alt="Mulher com rosto metade humano, metade robô">
+                </div>
+            </div>
+        </section>
+
+        <section class="feedbacks">
+            <h2>Feedbacks</h2>
+            <div id="feedbackCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Brunaa.jpeg" alt="Foto de Bruna Santos">
+                                <h4>Bruna Santos - Designer</h4>
+                                <p>"A experiência que estou tendo na infinity está sendo incrível, superou minha
+                                    espectativas. Mostrar como é na realidade o mercado de trabalho e ter projetos reais
+                                    faz total diferença para o crescimento profissional"</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/PaulaCCoelho.jpeg" alt="Foto de Paula Carregal">
+                                <h4>Paula Carregal - Full Stack Developer</h4>
+                                <p>"Cada dia na Infinity me proporciona novas descobertas e aprendizados, gosto muito da
+                                    metodologia."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Kelly.jpeg" alt="Foto de Kelly Robson">
+                                <h4>Kelly Robson - Full Stack Developer</h4>
+                                <p>"Estou gostando muito da Infinity porque além de ser 100% presencial, o conteúdo é
+                                    claro e bem estruturado, está sendo uma experiência ótima para mim."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Dayana.jpeg" alt="Foto de Dayana Sena">
+                                <h4>Dayana Sena - Full Stack Developer</h4>
+                                <p>"Gostei muito da Infinity School, é um ambiente diferenciado e inspirador, que dá até
+                                    vontade de morar lá. O ensino é completo, dinâmico e envolve os alunos. Com certeza,
+                                    uma experiência transformadora."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/ricardo.jpeg" alt="Foto de Ricardo">
+                                <h4>Ricardo Wemerson - Full Stack Developer</h4>
+                                <p>"A infinity School possui uma estrutura e profissionais incríveis!
+                                    Estudar na mesma se tornou um hobbie, pois é prazeroso estudar em um ambiente com
+                                    pessoas tão atenciosas, além de ter vários eventos interessantes."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/MariaCamila.jpeg" alt="Foto de Maria Camila">
+                                <h4>Maria Camila Rosa - Full Stack Developer</h4>
+                                <p>"A Infinity School tem sido um divisor de águas na minha trajetória. Cada aula é mais
+                                    do que aprendizado técnico: é um impulso para ir além, explorar novos caminhos e
+                                    conquistar habilidades que antes pareciam bem distantes.
+
+                                    Na área de automação, estou evoluindo de forma consistente, superando desafios que
+                                    antes me pareciam obstáculos intransponíveis. Hoje, cada dificuldade se transforma
+                                    em degrau para minha confiança, mostrando que sou capaz de alcançar resultados cada
+                                    vez maiores.
+
+                                    A Infinity não está apenas me ensinando programação; está me ajudando a transformar
+                                    minha visão de futuro, fortalecendo minha autoconfiança e me preparando para ser
+                                    protagonista na minha carreira."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Nayara.jpeg" alt="Foto de Nayara">
+                                <h4>Nayara Ventura - Full Stack Developer</h4>
+                                <p>"Minha jornada na Infinity School tem sido extremamente enriquecedora. O curso de
+                                    Full Stack combina teoria e prática de forma eficiente, além de contar com
+                                    professores sempre disponíveis para apoiar nosso aprendizado. Tenho percebido uma
+                                    evolução consistente tanto no front-end quanto no back-end, o que me dá mais
+                                    segurança para atuar no mercado de tecnologia."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Lucas.jpeg" alt="Foto de Lucas Felipe">
+                                <h4>Lucas Felipe- Full Stack Developer</h4>
+                                <p>"O curso de programação Full Stack tem sido muito enriquecedor, pois une teoria e
+                                    prática de maneira equilibrada. As aulas estão me ajudando a desenvolver habilidades
+                                    técnicas importantes e a compreender melhor como funciona o mercado de tecnologia.
+                                    Além disso, a metodologia adotada facilita o aprendizado e torna o conteúdo mais
+                                    dinâmico e aplicável ao dia a dia."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Claudia.jpeg" alt="Foto de Claudia">
+                                <h4>Claudia Alvarenga - Marketing</h4>
+                                <p>"Minha experiência na Infinity está sendo bem positiva. Como dentista senti a
+                                    necessidade de conhecer mais a respeito do marketing digital e não poderia ter
+                                    escolhido uma escola melhor. Profissionais atenciosos e qualificados e colegas
+                                    dedicados que querem aprender e se qualificar cada vez mais. Vou levar esses
+                                    momentos pra vida."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Pablo.jpeg" alt="Foto de Pablo">
+                                <h4>Pablo Martin - Full Stack Developer</h4>
+                                <p>"Com tempo que passei na Infinity School desenvolvi habilidades e conexões que
+                                    aprimoraram meu conhecimento,Ambiente amigavel eacolhedor com profissionais
+                                    Qualificados auxiliando sempre que necessário."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Jonathan.jpeg" alt="Foto de Jonathan">
+                                <h4>Jonathan Torres - Designer</h4>
+                                <p>"Minha experiência na infinity está fazendo toda a diferença na prática do meu dia a
+                                    dia como design.
+                                    Pois está me colocando dentro da realidade da minha área e me preparando para o
+                                    mercado de trabalho com a oportunidade de apresentar meu projeto para empresas
+                                    específicas."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Victor.jpeg" alt="Foto de Victor">
+                                <h4>Victor Anastacio - Full Stack Developer</h4>
+                                <p>"Durante o curso de Fullstack na Infinity School, desenvolvi minha lógica de
+                                    programação, participei de projetos que se destacaram e tive a satisfação de
+                                    alcançar o top 10 da turma. A equipe da escola sempre me apoiou, trazendo desafios
+                                    constantes e tornando o aprendizado divertido.
+
+                                    Esse processo também foi importante para fortalecer minha presença profissional:
+                                    organizei meus projetos no GitHub e aumentei minha visibilidade no LinkedIn,
+                                    ampliando meu networking e abrindo novas oportunidades. Foi uma experiência
+                                    transformadora que consolidou minha base na programação e no mercado de tecnologia."
+                                </p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="min-height: 400px;">
+                            <div class="feedback-card mx-2 text-center">
+                                <h4 class="mb-3">Agradecimento Especial</h4>
+                                <p>"Aos nossos incríveis monitores e professores, nosso sincero agradecimento.
+
+                                    Tudo isso não seria possível sem a ajuda e a participação de vocês. O projeto
+                                    LimitlessHax se tornou realidade graças à sua orientação, paciência e sabedoria.
+
+                                    Cada conselho foi fundamental e cada incentivo nos deu força para continuar. Vocês
+                                    foram a base para que pudéssemos construir algo sem limites.
+
+                                    Essa vitória é nossa! Muito obrigado!
+
+                                    Equipe LimitlessHax"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Marcos.jpeg" alt="Foto de Marcos">
+                                <h4>Marcos Simões - Full Stack Developer</h4>
+                                <p>"Minha experiência na Infinity como aluno foi extremamente positiva e importante como
+                                    Dev Full-Stack, onde os monitores sempre me auxiliaram, os professores de diversas
+                                    áreas sempre me trataram muito bem e me ensinaram muita coisa. Tive o prazer de
+                                    sentar na cadeira onde muitos alunos hoje sentam. Fiquei muito feliz de ter sido
+                                    parte da Infinity."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Joao.jpeg" alt="Foto de João">
+                                <h4>João - Full Stack Developer</h4>
+                                <p>"Eu fiz o curso de Programação Full Stack e posso afirmar que minha experiência na
+                                    Infinity foi uma das melhores que já tive na vida.
+                                    Lá, é possível ter uma nova visão sobre programação, passando desde os primeiros
+                                    passos como iniciante até a participação em projetos reais, com possibilidades de
+                                    escalabilidade.
+                                    Além disso, a Infinity oferece super módulos e workshops que proporcionam uma
+                                    experiência incrível — seja com frameworks de programação ou até mesmo com conteúdos
+                                    de outras áreas, como marketing, design e muito mais."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Caio.jpeg" alt="Foto de Caio">
+                                <h4>Caio Caribelli - Full Stack Developer</h4>
+                                <p>"Minha experiência com a infinity foi uma das melhores que já tive em uma escola. Fui
+                                    muito bem acompanhado tanto pelos excelentes professores, tanto pelos monitores
+                                    dedicados que sempre facilitaram a explicação na hora de dúvidas.
+                                    Eu sempre disse e volto a afirmar que o diferencial da infinity que é muito bem
+                                    feito, é o acompanhamento ao aluno. Vi isso como aluno, como monitor e agora como
+                                    professor.
+                                    Acho incrível esse carinho com quem as vezes entrega seu sonho em nossas mãos. Um
+                                    prazer fazer parte dessa história!!"</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="feedback-card mx-2">
+                                <img src="../images/Luiza.jpeg" alt="Foto de Luiza">
+                                <h4>Luiza Coluccini - Marketing & Designer</h4>
+                                <p>"Minha experiência na Infinity School foi e tem sido incrível! A escola me abriu
+                                    diversas portas para desenvolvimento pessoal e profissional. Como antiga monitora e
+                                    atual instrutora pude me conectar com os alunos, adquirir novos conhecimentos e
+                                    compartilhar meus próprios com pessoas cheias de talento e ambição."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <!-- <div class="feedback-card mx-2">
+                                <img src="./images/aluno11.jpeg" alt="Foto de Thiago Rocha">
+                                <h4>Thiago Rocha - Programação Front-End</h4>
+                                <p>"A didática dos professores é excelente, tornando o aprendizado de códigos complexos
+                                    algo muito mais leve e compreensível. Evoluí muito."</p>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <div class="feedback-card mx-2">
+                                <img src="./images/aluno12.jpeg" alt="Foto de Larissa Ferreira">
+                                <h4>Larissa Ferreira - Ilustração Digital</h4>
+                                <p>"Encontrei na Infinity um ambiente que incentiva a criatividade e a colaboração. Fiz
+                                    grandes amigos e parceiros de projetos aqui."</p>
+                                <div class="stars">★★★★★</div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#feedbackCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#feedbackCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Modal Privacidade -->
+    <div id="modalPoliticas" class="modal">
+        <div class="modal-content">
+            <span class="close" id="fechar-modal">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <p>Todas as suas informações pessoais recolhidas serão usadas para ajudar a tornar a sua visita no nosso
+                site mais produtiva e o mais agradável possível. E a garantia da confidencialidade dos dados pessoais
+                dos utilizadores do nosso site é muito importante para a Infinity School. Todas as informações pessoais
+                relativas a membros, clientes ou visitantes que usem o site da Infinity School serão tratadas em
+                concordância com a Lei da Proteção de Dados Pessoais de 26 de outubro de 1998 (Lei n.º 67/98). As
+                informações pessoais recolhidas podem incluir o seu nome, e-mail, número de telefone fixo e/ou celular,
+                entre outros. O uso do site da Infinity School pressupõe a aceitação deste Acordo de Privacidade. A
+                equipe da Infinity School reserva-se o direito de alterar este acordo sem aviso prévio. Deste modo,
+                recomendamos que consulte a nossa política de privacidade com regularidade de forma a estar sempre
+                atualizado.</p> <br>
+
+            <h2>Os anúncios</h2>
+            <p>Tal como outros websites, coletamos e utilizamos informação contida nos anúncios. A informação contida
+                nos anúncios inclui o seu endereço IP (Internet Protocol), o seu ISP (Internet Service Provider, como o
+                Sapo, Clix ou outro), o browser que utilizou ao visitar o nosso website (como o Internet Explorer ou o
+                Firefox), o tempo da sua visita e que páginas visitou dentro do nosso website.</p> <br>
+
+            <h2>Política de cookies Infinity School</h2>
+            <h2>O que são cookies?</h2>
+            Como é prática comum em quase todos os sites profissionais, este site usa cookies, que são pequenos arquivos
+            baixados no seu computador, para melhorar sua experiência. Esta página descreve quais informações eles
+            coletam, como as usamos e por que às vezes precisamos armazenar esses cookies. Também compartilharemos como
+            você pode impedir que esses cookies sejam armazenados, no entanto, isso pode fazer o downgrade ou ‘quebrar’
+            certos elementos da funcionalidade do site. <br><br>
+
+            <h2>Como usamos os cookies?</h2>
+            <p>Utilizamos cookies por vários motivos, detalhados abaixo. Infelizmente, na maioria dos casos, não existem
+                opções padrão do setor para desativar os cookies sem desativar completamente a funcionalidade e os
+                recursos que eles adicionam a este site. É recomendável que você deixe todos os cookies se não tiver
+                certeza se precisa ou não deles, caso sejam usados para fornecer um serviço que você usa.</p> <br>
+
+            <h2>Como desativar cookies:</h2>
+            <p>Você pode impedir a configuração de cookies ajustando as configurações do seu navegador (consulte a Ajuda
+                do navegador para saber como fazer isso). Esteja ciente de que a desativação de cookies afetará a
+                funcionalidade deste e de muitos outros sites que você visita. A desativação de cookies geralmente
+                resultará na desativação de determinadas funcionalidades e recursos deste site. Portanto, é recomendável
+                que você não desative os cookies.</p> <br>
+
+            <h2>Cookies que definimos:</h2>
+            <p>Cookies relacionados a e-mail marketing: Este site oferece serviços de assinatura de e-mail marketing e
+                os cookies podem ser usados para lembrar se você já está registrado e se deve mostrar determinadas
+                notificações válidas apenas para usuários inscritos / não inscritos;
+                Cookies relacionados a pesquisas: Periodicamente, oferecemos pesquisas e questionários para fornecer
+                informações interessantes, ferramentas úteis ou para entender nossa base de usuários com mais precisão.
+                Essas pesquisas podem usar cookies para lembrar quem já participou numa pesquisa ou para fornecer
+                resultados precisos após a alteração das páginas;
+                Cookies relacionados a formulários: Quando você envia dados por meio de um formulário como os
+                encontrados nas páginas de contacto ou nos formulários de comentários, os cookies podem ser configurados
+                para lembrar os detalhes do usuário para correspondência futura;
+                Cookies de preferências do site: Para proporcionar uma ótima experiência neste site, fornecemos a
+                funcionalidade para definir suas preferências de como esse site é executado quando você o usa. Para
+                lembrar suas preferências, precisamos definir cookies para que essas informações possam ser chamadas
+                sempre que você interagir com uma página for afetada por suas preferências.</p>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <img src="../images/Logo padrão.png" alt="Logo Infinity School">
+                </div>
+                <div class="footer-links">
+                    <a href="../home/home.html">Home</a>
+                    <a href="../PagExplore/inspire-se.html">Explorar</a>
+                    <a href="../Blog/blog.html">Blog</a>
+                    <a href="#" id="abrir-modal">Privacidade</a>
+                </div>
+                <div class="social-media">
+                    <span>Rede social</span>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/infinity.school/" class="social-icon"><img
+                                src="../icons/instagram.png" alt="Instagram"></a>
+                        <a href="#" class="social-icon"><img src="../icons/whatsapp.png" alt="Whatsapp"></a>
+                        <a href="https://www.linkedin.com/company/infinityschool/posts/?feedView=all"
+                            class="social-icon"><img src="../icons/linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Infinity School. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="home.js"></script>
+</body>
+
+</html>

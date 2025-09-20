@@ -1,0 +1,180 @@
+:root {
+    /* Fontes */
+    --font-principal: 'Raleway', sans-serif;
+    --font-alternativa: Arial, sans-serif;
+
+    /* Cores */
+    --cor-fundo: #000;
+    --cor-branco: #fff;
+    --cor-vermelho: #C64132;
+    --cor-vermelho-escuro: #af1103;
+    --cor-vermelho-claro: #ff6f61;
+    --cor-neon: #E53935;
+
+    /* Header */
+    --header-height: 100px;
+    --header-border: 4px;
+    --header-box-shadow: 0px 4px 10px var(--cor-neon);
+
+    /* Botão OK */
+    --ok-btn-width: 200px;
+    --ok-btn-font-size: 18px;
+    --ok-btn-padding: 10px 40px;
+    --ok-btn-border-radius: 25px;
+    --ok-btn-animation-duration: 2.5s;
+
+    /* Textos */
+    --texto-padding: 20px;
+    --texto-acesse-font-size: 19px;
+
+    /* Responsividade */
+    --header-height-lg: 80px;
+    --header-height-md: 70px;
+    --header-height-sm: 60px;
+    --ok-btn-width-lg: 180px;
+    --ok-btn-font-size-lg: 16px;
+    --ok-btn-width-md: 150px;
+    --ok-btn-font-size-md: 15px;
+    --ok-btn-padding-md: 8px 24px;
+    --ok-btn-font-size-sm: 14px;
+    --ok-btn-padding-sm: 8px 10px;
+    --ok-btn-border-radius-sm: 18px;
+    --texto-padding-md: 12px;
+    --texto-padding-sm: 8px;
+    --texto-acesse-font-size-sm: 16px;
+}
+
+/* ===== Global ===== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-principal);
+    font-optical-sizing: auto; 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+/* ===== Header ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-fundo);
+    box-shadow: var(--header-box-shadow);
+    z-index: 10;
+    animation: neon 3s infinite alternate ease-in-out;
+    border-bottom: var(--header-border) solid var(--cor-neon);
+}
+
+header img {
+    height: 60px; 
+    width: auto;
+}
+
+/* Animação neon do header */
+@keyframes neon {
+    0% {
+        border-bottom-color: var(--cor-neon);
+        box-shadow: 0px 0px 5px var(--cor-neon), 0px 0px 10px var(--cor-neon);
+    } 
+    50% {
+        border-bottom-color: var(--cor-vermelho-escuro);
+        box-shadow: 0px 0px 15px var(--cor-vermelho-escuro), 0px 0px 30px var(--cor-vermelho-claro);
+    }
+    100% {
+        border-bottom-color: var(--cor-neon);
+        box-shadow: 0px 0px 5px var(--cor-neon), 0px 0px 10px var(--cor-neon);
+    }
+}
+
+/* ===== Texto e botão ===== */
+.texto {
+    text-align: center;
+    color: var(--cor-branco);
+    padding: var(--texto-padding);
+}
+
+.texto .acesse {
+    font-size: var(--texto-acesse-font-size);
+    text-align: center;
+    font-weight: 100;
+}
+
+.texto .ok-btn {
+    padding: var(--ok-btn-padding);
+    margin: 0;
+    cursor: pointer;
+    width: var(--ok-btn-width);
+    max-width: var(--ok-btn-width);
+    background: var(--cor-vermelho);
+    color: var(--cor-branco);
+    text-align: center;
+    font-family: var(--font-alternativa);
+    font-weight: 700;
+    font-size: var(--ok-btn-font-size);
+    border-radius: var(--ok-btn-border-radius);
+    margin-bottom: 30px;
+    border: 2px solid var(--cor-vermelho);
+    animation: neonBtn var(--ok-btn-animation-duration) infinite alternate ease-in-out;
+    transition: all 0.3s ease;
+    align-self: stretch;
+    margin-left: 4px;
+}
+
+.texto .ok-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Animação neon do botão */
+@keyframes neonBtn {
+    0% {
+        background: var(--cor-vermelho);
+        border-color: var(--cor-vermelho);
+        box-shadow: 0 0 8px var(--cor-vermelho), 0 0 16px var(--cor-vermelho);
+    }
+    50% {
+        background: var(--cor-vermelho-claro);
+        border-color: var(--cor-vermelho-claro);
+        box-shadow: 0 0 15px var(--cor-vermelho-claro), 0 0 35px var(--cor-vermelho-claro);
+    }
+    100% {
+        background: var(--cor-vermelho);
+        border-color: var(--cor-vermelho);
+        box-shadow: 0 0 8px var(--cor-vermelho), 0 0 16px var(--cor-vermelho);
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1200px) {
+    header { height: var(--header-height-lg); }
+    .texto .ok-btn { width: var(--ok-btn-width-lg); font-size: var(--ok-btn-font-size-lg); }
+}
+
+@media (max-width: 900px) {
+    header { height: var(--header-height-md); }
+    .texto { padding: var(--texto-padding-md); }
+    .texto .ok-btn { width: var(--ok-btn-width-md); font-size: var(--ok-btn-font-size-md); padding: var(--ok-btn-padding-md); }
+}
+
+@media (max-width: 600px) {
+    header { height: var(--header-height-sm); }
+    .texto { padding: var(--texto-padding-sm); }
+    .texto .ok-btn { width: 100%; max-width: 100%; font-size: var(--ok-btn-font-size-sm); padding: var(--ok-btn-padding-sm); border-radius: var(--ok-btn-border-radius-sm); }
+    .texto .acesse { font-size: var(--texto-acesse-font-size-sm); }
+}

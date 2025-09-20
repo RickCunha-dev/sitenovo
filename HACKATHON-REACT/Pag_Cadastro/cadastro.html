@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="icon" type="image/svg+xml" href="../Imagens/infinity.png">
+    <link rel="icon" type="image/png" href="../images/infinity.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="../images/infinity.png">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="cadastroResponsive.css">
+</head>
+
+<body>
+    <header class="logo">
+        <a href="../home/home.html">
+            <img src="../Imagens/Logo padrão.png">
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="image">
+
+        </div>
+
+        <div class="formulario">
+            <h1>Cadastre-se</h1>
+            <form>
+                <label for="nome">Nome Completo</label><br>
+                <input id="nome" name="nome" type="text"><br><br>
+
+                <label for="cpf">CPF</label><br>
+                <input id="cpf" name="cpf" type="number"><br><br>
+
+                <label for="email">Email</label><br>
+                <input id="email" name="email" type="email"><br><br>
+
+                <label for="senha">Senha</label><br>
+                <div class="input-olho">
+                    <input id="senha" name="senha" type="password">
+                    <img src="../Icones/olhofechado.png" alt="Mostrar senha" class="olhinho">
+                </div><br><br>
+
+                <label for="confirmarSenha">Confirmar Senha</label><br>
+                <div class="input-olho">
+                    <input id="confirmarSenha" name="ConfirmarSenha" type="password">
+                    <img src="../Icones/olhofechado.png" alt="Mostrar senha" class="olhinho">
+                </div><br><br>
+                <div class="btnForm">
+                    <button type="submit" class="btn-cadastro">Cadastre-se</button>
+                </div>
+            </form>
+
+            <div class="separador">
+                <span class="ou">ou</span>
+            </div>
+
+            <div class="botoes-redes-socias">
+                <a href="#"><img src="../Icones/search.png" alt="Entrar com Google"></a>
+                <a href="#"><img src="../Icones/apple-logo.png" alt="Entrar com Apple"></a>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

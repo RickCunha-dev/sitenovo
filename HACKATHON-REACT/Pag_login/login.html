@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/svg+xml" href="../Imagens/infinity.png">
+    <link rel="icon" type="image/png" href="../images/infinity.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="../images/infinity.png">
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>
+</head>
+
+<body>
+    <header class="logo">
+        <a href="../home/home.html"><img src="../Imagens/Logo padrão.png" alt="logo-infinity" class="logo-in"></a>
+    </header>
+
+    <div class="container">
+        <div class="image"></div>
+
+        <div class="formulario">
+            <div class="titulo-form">
+                <h1>Conecte-se</h1>
+            </div>
+            <form>
+                <label for="cpf" class="label">Login (CPF/CNPJ)</label><br>
+                <input id="cpf" name="cpf" type="tel" maxlength="18" placeholder=""><br><br>
+
+                <label for="senha" class="label">Senha</label><br>
+                <div class="input-olho">
+                    <input id="senha" name="senha" type="password">
+                    <img src="../Icones/olhofechado.png" alt="Mostrar senha" class="olhinho">
+                </div><br><br>
+
+                <div class="option-links">
+                    <a href="../Esqueci_Senha2/senha2.html">Esqueceu a senha?</a>
+                    <a href="../Pag_Cadastro/cadastro.html">Cadastre-se</a>
+                </div>
+
+                <div class="btnForm">
+                    <button type="submit" class="btn-login">Login</button>
+                </div>
+            </form>
+
+            <div class="separador">
+                <span class="ou">ou</span>
+            </div>
+
+            <div class="botoes-redes-socias">
+                <a href="#" class="google"><img src="../Icones/search.png" alt="Entrar com Google"></a>
+                <a href="#" class="appel"><img src="../Icones/apple-logo.png" alt="Entrar com Apple"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

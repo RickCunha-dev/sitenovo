@@ -1,0 +1,249 @@
+:root {
+    --body-bg: #000000;
+    --text-color: #fff;
+    --logo-border: #E53935;
+    --logo-box-shadow: #E53935;
+    --logo-neon-alt: #af1103;
+    --logo-neon-light: #ff6f61;
+    --input-border: #444;
+    --input-focus-border: #E53935;
+    --input-focus-bg: #111;
+    --btn-bg: #E53935;
+    --btn-border: #E53935;
+    --btn-neon-alt: #ff6f61;
+    --h1-underline: #E53935;
+    --h1-underline-shadow: red;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    padding-top: 120px;
+    background-color: var(--body-bg);
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid var(--logo-border);
+    box-shadow: 0px 4px 10px var(--logo-box-shadow);
+    animation: neon 3s infinite alternate ease-in-out;
+}
+
+@keyframes neon {
+    0% {
+        border-bottom-color: var(--logo-border);
+        box-shadow: 0px 0px 5px var(--logo-box-shadow), 0px 0px 10px var(--logo-box-shadow);
+    } 50% {
+        border-bottom-color: var(--logo-neon-alt);
+        box-shadow: 0px 0px 15px var(--logo-neon-alt), 0px 0px 30px var(--logo-neon-light);
+    }
+    100% {
+        border-bottom-color: var(--logo-border);
+        box-shadow: 0px 0px 5px var(--logo-box-shadow), 0px 0px 10px var(--logo-box-shadow);
+    }
+}
+
+.logo img {
+    width: 235px;
+    height: 66px;
+}
+
+.container {
+    flex: 1; 
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.image {
+    flex: 3;
+    background: url(../Imagens/cadastre-se.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 100%;
+    min-width: 300px;
+    min-height: 400px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.formulario {
+    flex: 2;
+    padding: 0 20px;
+    max-width: 500px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-weight: bolder;
+}
+
+.formulario h1 {
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 15%;
+    color: var(--text-color);
+    position: relative;
+    margin-right: 10%;
+    width: 75%;
+}
+
+.formulario h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: 4px; 
+    width: 65%;
+    background-color: var(--h1-underline);
+    transform: scaleX(1); 
+    transform-origin: left; 
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 3px 13px var(--h1-underline-shadow);
+}
+
+.formulario h1:hover::after {
+    transform: scaleX(0.4); 
+}
+
+.formulario input {
+    background-color: var(--body-bg);
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 3%;
+    padding: 10px;
+    width: 380px;
+    border-radius: 12px;
+    border: 2px solid var(--input-border);
+    color: var(--text-color);
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0px 2px 6px rgba(0,0,0,0.5);
+}
+
+.formulario input:focus {
+    border: 2px solid var(--input-focus-border);
+    box-shadow: 0px 0px 10px var(--input-focus-border);
+    background-color: var(--input-focus-bg);
+}
+
+.input-olho {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.input-olho input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.input-olho .olhinho {
+    position: absolute;
+    right: 10px;
+    top: 62%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.btnForm {
+    width: 100%;
+    text-align: center;
+}
+
+.btn-cadastro {
+    padding: 10px;
+    margin: 20px auto 30px auto;
+    cursor: pointer;
+    width: 250px;
+    background: var(--btn-bg);
+    color: var(--text-color);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border: 2px solid var(--btn-border);
+    animation: neonBtn 2.5s infinite alternate ease-in-out;
+    transition: all 0.3s ease;
+}
+
+.btn-cadastro:hover {
+    transform: scale(1.05);
+}
+
+@keyframes neonBtn {
+    0% {
+        background: var(--btn-bg);
+        border-color: var(--btn-border);
+        box-shadow: 0 0 8px var(--btn-border), 0 0 16px var(--btn-border);
+    } 50% {
+        background: var(--btn-neon-alt);
+        border-color: var(--btn-neon-alt);
+        box-shadow: 0 0 15px var(--btn-neon-alt), 0 0 35px var(--btn-neon-alt);
+    } 100% {
+        background: var(--btn-bg);
+        border-color: var(--btn-border);
+        box-shadow: 0 0 8px var(--btn-border), 0 0 16px var(--btn-border);
+    }
+}
+
+.ou {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.botoes-redes-socias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.botoes-redes-socias img {
+    width: 35.97px;
+    height: 35px;
+}
+
+.botoes-redes-socias a {
+    background-color: #fff;
+    padding: 13px;
+    border-radius: 50px;
+}

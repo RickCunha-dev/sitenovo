@@ -1,0 +1,328 @@
+:root {
+    /* Fontes */
+    --font-raleway: 'Raleway', sans-serif;
+    --font-arial: Arial, sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+
+    /* Cores */
+    --cor-fundo: #000;
+    --cor-branco: #fff;
+    --cor-vermelho: #E53935;
+    --cor-vermelho-claro: #ff6f61;
+    --cor-vermelho-escuro: #af1103;
+    --cor-borda-input: #444;
+    --fundo-input-focus: #111;
+
+    /* Header */
+    --header-height: 100px;
+    --header-box-shadow: 0px 4px 10px var(--cor-vermelho);
+
+    /* Formulário */
+    --form-max-width: 560px;
+    --form-padding-vertical: clamp(34px,4vw,54px);
+    --form-padding-horizontal: clamp(30px,3vw,46px);
+    --form-bg: rgba(0,0,0,0.82);
+    --form-border-radius: 12px;
+    --form-gap: 50px;
+
+    /* Inputs */
+    --input-padding: 12px 14px;
+    --input-font-size: 18px;
+    --input-font-weight: 600;
+    --input-border-radius: 14px;
+    --input-border: 2px solid var(--cor-borda-input);
+
+    /* Botão */
+    --btn-width: 250px;
+    --btn-font-size: 18px;
+    --btn-padding: 12px;
+    --btn-border-radius: 14px;
+    --btn-animation-duration: 2.5s;
+
+    /* Título */
+    --h1-font-size: 30px;
+    --h1-border-height: 4px;
+    --h1-border-color: var(--cor-vermelho);
+}
+
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-raleway);
+    font-optical-sizing: auto; 
+    font-weight: weight; 
+    font-style: normal;
+}
+
+body {
+    position: relative;
+    background-color: var(--cor-fundo);
+    color: var(--cor-branco);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: var(--header-height); 
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 120px 45% 0 0;
+    background: url('../Imagens/redefinir senha.png') left center no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+/* --- LOGO --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: var(--cor-fundo);
+    box-shadow: var(--header-box-shadow);
+    z-index: 10;
+    animation: neon 3s infinite alternate ease-in-out;
+}
+
+header img {
+    height: 60px; 
+    width: auto;
+}
+
+/* ANIMAÇÕES */
+@keyframes neon {
+    0% {
+        border-bottom-color: var(--cor-vermelho);
+        box-shadow: 0px 0px 5px var(--cor-vermelho), 0px 0px 10px var(--cor-vermelho);
+    } 
+    50% {
+        border-bottom-color: var(--cor-vermelho-escuro);
+        box-shadow: 0px 0px 15px #a20e00, 0px 0px 30px var(--cor-vermelho-claro);
+    }
+    100% {
+        border-bottom-color: var(--cor-vermelho);
+        box-shadow: 0px 0px 5px var(--cor-vermelho), 0px 0px 10px var(--cor-vermelho);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.3;
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 20px var(--cor-vermelho), 0 0 30px var(--cor-vermelho);
+    }
+    100% {
+        text-shadow: 0 0 30px var(--cor-vermelho-claro), 0 0 40px var(--cor-vermelho-claro), 0 0 50px var(--cor-vermelho-claro);
+    }
+}
+
+/* --- CONTEÚDO --- */
+.container {
+    flex: 1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end;
+    min-height: calc(100vh - var(--header-height));
+    padding: 40px clamp(24px,4vw,70px);
+    position: relative;
+    z-index: 1; /* acima da imagem */
+    gap: 0;
+}
+
+.imagem { display: none; }
+
+.imagem img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+}
+
+/* --- FORMULÁRIO --- */
+.formulario {
+    flex: 0 1 520px;
+    padding: var(--form-padding-vertical) var(--form-padding-horizontal);
+    max-width: var(--form-max-width);
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--form-bg);
+    backdrop-filter: blur(6px);
+    color: var(--cor-branco);
+    font-weight: bolder;
+    gap: var(--form-gap);
+}
+
+.formulario h1 {
+    font-family: var(--font-arial);
+    font-weight: bolder;
+    font-size: var(--h1-font-size);
+    margin-bottom: 7%;
+    color: var(--cor-branco);
+    position: relative;
+    margin-right: 140px;
+    width: fit-content;
+}
+
+.formulario h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: var(--h1-border-height); 
+    width: 80%;
+    background-color: var(--h1-border-color);
+    transform: scaleX(1); 
+    transform-origin: left; 
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 3px 13px red;
+}
+
+.formulario h1:hover::after {
+    transform: scaleX(0.4); 
+}
+
+/* Inputs */
+.form label {
+    font-size: 21px;
+}
+
+.formulario input {
+    background-color: var(--cor-fundo);
+    font-family: var(--font-arial);
+    font-size: var(--input-font-size);
+    font-weight: var(--input-font-weight);
+    margin-top: 3%;
+    padding: var(--input-padding);
+    width: 100%;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    color: var(--cor-branco);
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0px 2px 6px rgba(0,0,0,0.5);
+}
+
+.formulario input:focus {
+    border: 2px solid var(--cor-vermelho);
+    box-shadow: 0px 0px 10px var(--cor-vermelho);
+    background-color: var(--fundo-input-focus);
+}
+
+/* Olho */
+.input-olho {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.input-olho input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.input-olho .olhinho {
+    position: absolute;
+    right: 10px;
+    top: 62%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/* Botão */
+.enviar-btn {
+    padding: var(--btn-padding);
+    cursor: pointer;
+    width: var(--btn-width);
+    background: var(--cor-vermelho);
+    color: var(--cor-branco);
+    text-align: center;
+    font-family: var(--font-arial);
+    font-weight: 800;
+    font-size: var(--btn-font-size);
+    border-radius: var(--btn-border-radius);
+    margin-left: 20%;
+    margin-top: 10%;
+    border: 2px solid var(--cor-vermelho);
+    animation: neonBtn var(--btn-animation-duration) infinite alternate ease-in-out;
+    transition: all 0.3s ease;
+}
+
+.enviar-btn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes neonBtn {
+    0% {
+        background: var(--cor-vermelho);
+        border-color: var(--cor-vermelho);
+        box-shadow: 0 0 8px var(--cor-vermelho), 0 0 16px var(--cor-vermelho);
+    }
+
+    50% {
+        background: var(--cor-vermelho-claro);
+        border-color: var(--cor-vermelho-claro);
+        box-shadow: 0 0 15px var(--cor-vermelho-claro), 0 0 35px var(--cor-vermelho-claro);
+    }
+
+    100% {
+        background: var(--cor-vermelho);
+        border-color: var(--cor-vermelho);
+        box-shadow: 0 0 8px var(--cor-vermelho), 0 0 16px var(--cor-vermelho);
+    }
+}
+
+
+/* telas médias (entre 1040px e 1200px) */
+@media (max-width: 1200px) and (min-width: 1040px) {
+    body::before { display: none; }
+    .container { justify-content: center; align-items: center; }
+    .formulario { margin-right: 0; max-width: 600px; }
+}
+
+@media (max-width: 1200px) {
+    body::before { display: none; }
+    .container { justify-content: center; align-items: center; }
+    .enviar-btn { margin-top: 10%; width:250px; }
+}
+
+@media (max-width: 1024px) {
+    body::before { display: none; }
+    .container { display: flex; justify-content: center; align-items: center; }
+    .formulario { margin-right: 0; max-width: 520px; gap: 30px; }
+    .formulario h1 { font-size: 34px; margin-bottom: 10%; }
+    .enviar-btn { margin-top: 10%; width: 250px; text-align: center; }
+}
+
+@media (max-width: 768px) {
+    .container { display: flex; justify-content: center; align-items: center; }
+    .formulario { max-width: 400px; gap: 50px; }
+    .formulario h1 { font-size: 30px; width: 100%; margin-bottom: 20%; }
+    .enviar-btn { max-width: 200px; margin-top: 10%; width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .formulario { max-width: 100%; justify-content: center; align-items: center; padding: 32px 20px; height: 700px; gap: 46px; }
+    .formulario h1 { width: 75%; font-size: 21px; margin-bottom: 15%; }
+    .enviar-btn { font-size: 16px; max-width: 150px; margin-top: 10%; }
+}

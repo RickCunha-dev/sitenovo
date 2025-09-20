@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ===== ROOT ===== */
+:root {
+    /* Fontes */
+    --font-principal: 'Raleway', sans-serif;
+    --font-alternativa: Arial, sans-serif;
+
+    /* Cores */
+    --cor-fundo: #000;
+    --cor-branco: #fff;
+    --cor-vermelho: #E53935;
+    --cor-vermelho-claro: #ff6f61;
+    --cor-vermelho-escuro: #af1103;
+    --cor-borda-input: #444;
+    --cor-texto-secundario: #ccc;
+    --fundo-input-focus: #111;
+
+    /* Header */
+    --header-height: 100px;
+    --header-box-shadow: 0px 4px 10px #E53935;
+
+    /* Formulário */
+    --form-max-width: 560px;
+    --form-padding: clamp(34px,4vw,54px) clamp(30px,3vw,46px);
+    --form-bg: rgba(0,0,0,0.82);
+    --form-border-radius: 12px;
+    --form-gap: 50px;
+
+    /* Inputs */
+    --input-padding: 12px 14px;
+    --input-font-size: 18px;
+    --input-font-weight: 600;
+    --input-border-radius: 14px;
+    --input-border: 2px solid var(--cor-borda-input);
+
+    /* Botão */
+    --btn-width: 250px;
+    --btn-font-size: 18px;
+    --btn-padding: 12px;
+    --btn-border-radius: 14px;
+    --btn-animation-duration: 2.5s;
+
+    /* Título */
+    --h1-font-size: 30px;
+    --h1-border-height: 4px;
+    --h1-border-color: var(--cor-vermelho);
+
+    /* Texto secundário */
+    --texto-secundario-font-size: 18px;
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-principal) !important;
+}
+
+body {
+    background: var(--cor-fundo);
+    color: var(--cor-branco);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: var(--header-height);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* imagem de fundo */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 120px 45% 0 0;
+    background: url('../Imagens/redefinir senha.png') left center no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--cor-fundo);
+    box-shadow: var(--header-box-shadow);
+    z-index: 10;
+}
+
+header img {
+    height: 60px;
+    width: auto;
+}
+
+/* ===== CONTEÚDO ===== */
+.container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: calc(100vh - var(--header-height));
+    padding: 40px clamp(24px,4vw,70px);
+    position: relative;
+    z-index: 1;
+    gap: 0;
+}
+
+.formulario {
+    flex: 0 1 var(--form-max-width);
+    padding: var(--form-padding);
+    max-width: var(--form-max-width);
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--form-bg);
+    backdrop-filter: blur(6px);
+    color: var(--cor-branco);
+    font-weight: bolder;
+    gap: var(--form-gap);
+    border-radius: var(--form-border-radius);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: var(--font-principal) !important;
+}
+
+/* título */
+form h1 {
+    font-family: var(--font-alternativa);
+    font-weight: bolder;
+    font-size: var(--h1-font-size);
+    margin-bottom: 7%;
+    color: var(--cor-branco);
+    position: relative;
+    margin-right: 140px;
+    width: fit-content;
+}
+
+form h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: var(--h1-border-height);
+    width: 80%;
+    background-color: var(--h1-border-color);
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 3px 13px red;
+    animation: neon 3s infinite alternate ease-in-out;
+}
+
+form h1:hover::after {
+    transform: scaleX(0.4);
+}
+
+/* texto secundário */
+.frase {
+    font-size: var(--texto-secundario-font-size);
+    color: #ccc;
+    font-weight: 400;
+}
+
+/* inputs */
+form label {
+    font-size: 21px;
+    font-weight: 600;
+}
+
+form input {
+    background: var(--cor-fundo);
+    border: var(--input-border);
+    border-radius: var(--input-border-radius);
+    padding: var(--input-padding);
+    font-size: var(--input-font-size);
+    font-weight: var(--input-font-weight);
+    color: var(--cor-branco);
+    transition: all 0.3s ease;
+}
+
+form input:focus {
+    border: 2px solid var(--cor-vermelho);
+    box-shadow: 0 0 10px var(--cor-vermelho);
+    background: var(--fundo-input-focus);
+    outline: none;
+}
+
+/* botão */
+.enviar-btn {
+    padding: var(--btn-padding);
+    cursor: pointer;
+    width: var(--btn-width);
+    background: var(--cor-vermelho);
+    color: var(--cor-branco);
+    text-align: center;
+    font-family: var(--font-alternativa);
+    font-weight: 800;
+    font-size: var(--btn-font-size);
+    border-radius: var(--btn-border-radius);
+    margin-left: 20%;
+    margin-top: 10%;
+    border: 2px solid var(--cor-vermelho);
+    animation: neonBtn var(--btn-animation-duration) infinite alternate ease-in-out;
+    transition: all 0.3s ease;
+}
+
+.enviar-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes neonBtn {
+    0% {
+        background: var(--cor-vermelho);
+        border-color: var(--cor-vermelho);
+        box-shadow: 0 0 8px var(--cor-vermelho), 0 0 16px var(--cor-vermelho);
+    }
+    50% {
+        background: var(--cor-vermelho-claro);
+        border-color: var(--cor-vermelho-claro);
+        box-shadow: 0 0 15px var(--cor-vermelho-claro), 0 0 35px var(--cor-vermelho-claro);
+    }
+    100% {
+        background: var(--cor-vermelho);
+        border-color: var(--cor-vermelho);
+        box-shadow: 0 0 8px var(--cor-vermelho), 0 0 16px var(--cor-vermelho);
+    }
+}
+
+@keyframes neon {
+    0% {
+        border-bottom-color: var(--cor-vermelho);
+        box-shadow: 0px 0px 5px var(--cor-vermelho), 0px 0px 10px var(--cor-vermelho);
+    }
+    50% {
+        border-bottom-color: var(--cor-vermelho-escuro);
+        box-shadow: 0px 0px 15px #a20e00, 0 0 30px var(--cor-vermelho-claro);
+    }
+    100% {
+        border-bottom-color: var(--cor-vermelho);
+        box-shadow: 0px 0px 5px var(--cor-vermelho), 0 0 10px var(--cor-vermelho);
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* telas médias (entre 1040px e 1200px) */
+@media (max-width: 1200px) and (min-width: 1040px) {
+    body::before {
+        display: none;
+    }
+    .container {
+        justify-content: center;
+        align-items: center;
+    }
+    .formulario {
+        margin-right: 0;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 1200px) {
+    body::before {
+        display: none;
+    }
+    .container {
+        justify-content: center;
+        align-items: center;
+    }
+    .enviar-btn {
+        margin-top: 10%;
+        width: 250px;
+    }
+}
+
+@media (max-width: 1024px) {
+    body::before {
+        display: none;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .formulario {
+        margin-right: 0;
+        max-width: 520px;
+        gap: 30px;
+    }
+    form h1 {
+        font-size: 34px;
+        margin-bottom: 10%;
+    }
+    .enviar-btn {
+        margin-top: 10%;
+        width: 250px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .formulario {
+        max-width: 400px;
+        gap: 50px;
+    }
+    form h1 {
+        font-size: 30px;
+        width: 100%;
+        margin-bottom: 20%;
+    }
+    .enviar-btn {
+        max-width: 200px;
+        margin-top: 10%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario {
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 32px 20px;
+        height: 700px;
+        gap: 46px;
+    }
+    form h1 {
+        width: 75%;
+        font-size: 21px;
+        margin-bottom: 15%;
+    }
+    .enviar-btn {
+        font-size: 16px;
+        max-width: 150px;
+        margin-top: 10%;
+    }
+}
