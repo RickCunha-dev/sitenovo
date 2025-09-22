@@ -8,7 +8,7 @@ sys.path.insert(0, current_dir)
 os.chdir(current_dir)
 
 from sqlalchemy.orm import Session
-from db import SessionLocal
+from Backend.db import SessionLocal
 from models import Usuario
 
 def check_users():

@@ -45,8 +45,8 @@ python main.py
 ```
 
 ✅ **Backend funcionando**: http://127.0.0.1:8001  
-📚 **Documentação API**: http://127.0.0.1:8001/docs
-
+📚 **Documentação API**: http://127.0.0.1:8001/docs  
+ou o endereço do servidor remoto
 ---
 
 ### **4. ⚛️ Setup Frontend (Terminal 2)**

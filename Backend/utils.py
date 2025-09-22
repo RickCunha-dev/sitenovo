@@ -1,12 +1,11 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
+import os
 # Configurações
-# EMAIL_HOST = "hackathonlimitlesshax@gmail.com"
-EMAIL_PORT = 587
-EMAIL_USER = "hackathonlimitlesshax@gmail.com"
-EMAIL_PASSWORD = "hdtd aidi enpv jxli"  # senha de app no Gmail
+EMAIL_USER = str(os.getenv("EMAIL_USER"))
+EMAIL_PASSWORD = str(os.getenv("EMAIL_PASSWORD"))
+EMAIL_PORT = int(os.getenv("EMAIL_PORT", 587))
 
 # Dados do destinatário
 to_email = "pablo031martins@gmail.com"
