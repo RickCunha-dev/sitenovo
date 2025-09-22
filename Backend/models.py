@@ -1,8 +1,7 @@
-from typing import Optional
 from datetime import datetime
 from sqlalchemy import Column, String, Integer, Boolean, DateTime, Date
 from sqlalchemy.orm import declarative_base
-from sqlalchemy_utils import ChoiceType  # Se você planeja usar ChoiceType
+# from sqlalchemy_utils import ChoiceType  # Se você planeja usar ChoiceType
 # from db import engine
 
 
