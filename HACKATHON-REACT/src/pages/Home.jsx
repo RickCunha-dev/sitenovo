@@ -317,7 +317,7 @@ export default function Home({ onNavigate }) {
                     key={slideIndex}
                     className={`carousel-item ${slideIndex === 0 ? 'active' : ''}`}
                   >
-                    <div className="d-flex justify-content-center gap-3 px-3">
+                    <div className="d-flex justify-content-center gap-3" style={{ padding: '0 80px' }}>
                       {slideGroup.map((feedback, cardIndex) => (
                         <div key={cardIndex} className={`${styles['feedback-card']} flex-shrink-0`}>
                           {feedback.special ? (

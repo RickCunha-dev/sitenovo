@@ -77,14 +77,14 @@
 }
 
 /* --- LOGO --- */
-header {
+.pageHeader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: var(--header-height);
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     background-color: var(--cor-fundo);
     box-shadow: var(--header-box-shadow);
@@ -92,8 +92,8 @@ header {
     animation: neon 3s infinite alternate ease-in-out;
 }
 
-header img {
-    height: 60px; 
+.pageHeader img {
+    height: 60px;
     width: auto;
 }
 

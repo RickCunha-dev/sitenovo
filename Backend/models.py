@@ -12,8 +12,8 @@ class Usuario(Model):
 
     id_usuario = Column(Integer, primary_key=True, autoincrement=True)
     nome_completo = Column(String(100))
-    cpf = Column(String(11))
-    email = Column(String(100))
+    cpf = Column(String(11), unique=True)
+    email = Column(String(100), unique=True)
     password_hash = Column(String(128), nullable=False)
     data_nascimento = Column(Date, nullable=True)
     is_active = Column(Boolean, default=True)

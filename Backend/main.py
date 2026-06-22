@@ -8,7 +8,7 @@ from datetime import timedelta, datetime
 from pydantic import BaseModel, EmailStr
 from db import get_db
 from models import Usuario
-from schemas import UserCreate, UserLogin, UserOut as User
+from schemas import UserCreate, UserLogin, UserOut as User, PasswordReset
 from security import create_access_token, get_current_user
 from passlib.context import CryptContext
 from fastapi.middleware.cors import CORSMiddleware
@@ -41,7 +41,7 @@ app.add_middleware(
 
 
 
-@app.post("/register", status_code=201)
+@app.post("/register", status_code=201, response_model=User)
 async def register(user: UserCreate, db: Session = Depends(get_db)):
     if (
         db.query(Usuario)
@@ -97,6 +97,15 @@ def recover_password(cpf: str, db: Session = Depends(get_db)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro ao enviar email: {str(e)}")
     return {"message": "Email de recuperação enviado com sucesso."}
+
+@app.post("/redefinirsenha")
+def reset_password(data: PasswordReset, db: Session = Depends(get_db)):
+    usuario = db.query(Usuario).filter(Usuario.cpf == data.cpf).first()
+    if not usuario:
+        raise HTTPException(status_code=404, detail="CPF não encontrado.")
+    usuario.password_hash = get_password_hash(data.new_password)
+    db.commit()
+    return {"message": "Senha redefinida com sucesso."}
 
 if __name__ == "__main__":
     import uvicorn

@@ -53,6 +53,22 @@ export const authService = {
     return !!localStorage.getItem('access_token');
   },
 
+  // Redefinir senha
+  resetPassword: async (cpf, new_password) => {
+    try {
+      const response = await api.post('/redefinirsenha', { cpf, new_password });
+      return {
+        success: true,
+        data: response.data,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        error: error.response?.data?.detail || 'Erro ao redefinir senha',
+      };
+    }
+  },
+
   // Recuperar senha
   recoverPassword: async (cpf) => {
     try {

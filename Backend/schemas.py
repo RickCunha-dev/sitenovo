@@ -13,6 +13,10 @@ class UserLogin(BaseModel):
     cpf: str
     password: str
 
+class PasswordReset(BaseModel):
+    cpf: str
+    new_password: str
+
 class UserOut(BaseModel):
     id_usuario: int
     nome_completo: str

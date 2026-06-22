@@ -15,7 +15,7 @@
     --cor-underline-hover: #E50914;
 
     /* Botões */
-    --btn-padding: 2px 30px;
+    --btn-padding: 8px 24px;
     --btn-border-radius: 5px;
 
     /* Carrossel */
@@ -61,10 +61,11 @@ header {
 
 .header {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
     position: relative;
+    padding: 0 40px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .logo img {
@@ -73,9 +74,11 @@ header {
 }
 
 .nav-menu {
-    width: 30%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 40px;
+    margin-left: auto;
+    width: 100%;
 }
 
 .nav-menu a {
@@ -128,17 +131,20 @@ header {
 }
 
 .btn {
-    padding: var(--btn-padding);
+    padding: 8px 24px;
     font-weight: 600;
     cursor: pointer;
     border: none;
-    border-radius: var(--btn-border-radius);
+    color: var(--text-light);
+    white-space: nowrap;
+    line-height: 1.4;
 }
 
 .btn-login {
     background-color: transparent;
-    border: 1px solid var(--cor-branco);
+    border: 1px solid var(--btn-login-border);
     margin-right: 10px;
+    border-radius: 5px;
 }
 
 .btn-login:hover {
@@ -149,24 +155,30 @@ header {
 }
 
 .btn-cadastro {
-    background-color: var(--cor-vermelho);
-    color: var(--cor-branco);
+    background-color: var(--btn-cadastro-bg);
+    color: var(--text-light);
+    border-radius: 5px;
 }
 
 .btn-cadastro:hover {
+    background: var(--btn-cadastro-hover-bg);
     transform: scale(1.05);
-    animation: neonLaranja 1s infinite alternate;
+    animation: neonLaranja 1.5s infinite alternate;
 }
 
 .user-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--cor-branco);
+    color: #fff;
     text-decoration: none;
-    font-size: 22px;
-    padding: 4px;
-    transition: color .3s, transform .3s;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .user-btn:hover {

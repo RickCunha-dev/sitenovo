@@ -42,10 +42,11 @@ header {
 
 .header {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
     position: relative;
+    padding: 0 40px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .logo img {
@@ -54,12 +55,16 @@ header {
 }
 
 .nav-menu {
-    width: 30%;
+    width: 100%;
+    /* border: 1px solid red; */
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 40px;
+    /* margin-left: auto; */
 }
 
 .nav-menu a {
+    /* border: 1px solid red; */
     position: relative;
     color: white;
     text-decoration: none;
@@ -101,10 +106,10 @@ header {
     margin-left: 0; 
 }
 
-.header-buttons { 
-    display: flex; 
-    align-items: center; 
-    gap: 2px; 
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .header-buttons a { 
@@ -117,10 +122,13 @@ header {
 }
 
 .btn {
-    padding: 3px 30px;
+    padding: 8px 24px;
     font-weight: 600;
     cursor: pointer;
     border: none;
+    color: #fff;
+    white-space: nowrap;
+    line-height: 1.4;
 }
 
 .btn-login {
