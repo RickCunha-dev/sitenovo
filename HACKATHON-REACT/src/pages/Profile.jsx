@@ -4,6 +4,9 @@ import styles from './Profile.module.css';
 
 // Importações das imagens principais
 import logoImg from '../images/logo-padrao.png';
+import defaultRepoImg1 from '../images/app-delivery.png';
+import defaultRepoImg2 from '../images/sistema-web.jpg';
+import defaultAvatarImg from '../images/ricardo.jpeg';
 
 // Importações dos ícones
 import instagramIcon from '../icons/instagram.png';
@@ -133,7 +136,7 @@ export default function Profile({ onNavigate }) {
           email: user?.email || '',
           cpf: user?.cpf || '',
           bio: 'Desenvolvedor apaixonado por tecnologia e inovação. Sempre em busca de novos desafios e oportunidades de aprendizado.',
-          avatar_url: '/images/ricardo.jpeg',
+          avatar_url: defaultAvatarImg,
           location: 'São Paulo, Brasil',
           company: 'Infinity School',
           website: '',
@@ -149,29 +152,34 @@ export default function Profile({ onNavigate }) {
         localStorage.setItem('userProfile', JSON.stringify(defaultUserData));
       }
 
-      // Carregar repositórios - sempre usar repositórios padrão com imagens corretas
-      const defaultRepos = [
-        {
-          id: 'repo-1',
-          name: 'E-commerce Platform',
-          description: 'Plataforma completa de e-commerce desenvolvida com React e Node.js, incluindo sistema de pagamentos, carrinho de compras e dashboard administrativo.',
-          image: '/images/app-delivery.png',
-          link: 'https://github.com/ricardo/ecommerce'
-        },
-        {
-          id: 'repo-2',
-          name: 'Task Manager App',
-          description: 'Aplicativo de gerenciamento de tarefas com interface moderna e funcionalidades avançadas de organização.',
-          image: '/images/sistema-web.jpg',
-          link: 'https://github.com/ricardo/task-manager'
-        }
-      ];
-      setRepositories(defaultRepos);
-      localStorage.setItem('userRepositories', JSON.stringify(defaultRepos));
+      // Carregar repositórios do localStorage ou usar padrão
+      const savedRepos = localStorage.getItem('userRepositories');
+      if (savedRepos) {
+        setRepositories(JSON.parse(savedRepos));
+      } else {
+        const defaultRepos = [
+          {
+            id: 'repo-1',
+            name: 'E-commerce Platform',
+            description: 'Plataforma completa de e-commerce desenvolvida com React e Node.js, incluindo sistema de pagamentos, carrinho de compras e dashboard administrativo.',
+            image: defaultRepoImg1,
+            link: 'https://github.com/ricardo/ecommerce'
+          },
+          {
+            id: 'repo-2',
+            name: 'Task Manager App',
+            description: 'Aplicativo de gerenciamento de tarefas com interface moderna e funcionalidades avançadas de organização.',
+            image: defaultRepoImg2,
+            link: 'https://github.com/ricardo/task-manager'
+          }
+        ];
+        setRepositories(defaultRepos);
+        localStorage.setItem('userRepositories', JSON.stringify(defaultRepos));
+      }
     } catch (error) {
       console.error('Erro ao carregar dados:', error);
     } finally {
-      setTimeout(() => setLoading(false), 1500); // Simula carregamento
+      setLoading(false);
     }
   };
 

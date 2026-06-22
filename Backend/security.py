@@ -46,9 +46,9 @@ def get_current_user(
         user_id = payload.get("sub")
         if user_id is None:
             raise credentials_exception
-    except jwt.JWTError:
+    except jwt.PyJWTError:
         raise credentials_exception
-    user = db.query(Usuario).filter(Usuario.id_usuario == user_id).first()
+    user = db.query(Usuario).filter(Usuario.id_usuario == int(user_id)).first()
     if user is None:
         raise credentials_exception
     return user

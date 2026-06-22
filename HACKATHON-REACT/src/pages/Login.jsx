@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import styles from './Login.module.css';
+import logoImg from '../images/logo-padrao.png';
+import olhoAbertoIcon from '../icons/olhoaberto.png';
+import olhoFechadoIcon from '../icons/olhofechado.png';
+import searchIcon from '../icons/search.png';
+import appleIcon from '../icons/apple-logo.png';
 
 export default function Login({ onNavigate }) {
   const [formData, setFormData] = useState({
@@ -77,7 +82,7 @@ export default function Login({ onNavigate }) {
     <div className={styles.loginPage}>
       <header className={styles.logo}>
         <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>
-          <img src="/images/logo-padrao.png" alt="logo-infinity" className={styles['logo-in']} />
+          <img src={logoImg} alt="logo-infinity" className={styles['logo-in']} />
         </a>
       </header>
 
@@ -125,7 +130,7 @@ export default function Login({ onNavigate }) {
                 required
               />
               <img
-                src={showPassword ? "/icons/olhoaberto.png" : "/icons/olhofechado.png"}
+                src={showPassword ? olhoAbertoIcon : olhoFechadoIcon}
                 alt="Mostrar senha"
                 className={styles.olhinho}
                 onClick={togglePasswordVisibility}
@@ -158,10 +163,10 @@ export default function Login({ onNavigate }) {
 
           <div className={styles['botoes-redes-socias']}>
             <a href="#" className={styles.google} onClick={(e) => { e.preventDefault(); alert('Login com Google em desenvolvimento'); }}>
-              <img src="/icons/search.png" alt="Entrar com Google" />
+              <img src={searchIcon} alt="Entrar com Google" />
             </a>
             <a href="#" className={styles.appel} onClick={(e) => { e.preventDefault(); alert('Login com Apple em desenvolvimento'); }}>
-              <img src="/icons/apple-logo.png" alt="Entrar com Apple" />
+              <img src={appleIcon} alt="Entrar com Apple" />
             </a>
           </div>
         </div>

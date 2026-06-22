@@ -245,7 +245,7 @@ body.menu-open {
 .carrossel {
     width: 100%;
     height: var(--carrossel-altura);
-    background: url('/images/blog.png') no-repeat center center;
+    background: url('../images/blog.png') no-repeat center center;
     background-size: cover;
     color: var(--cor-branco);
     display: flex;

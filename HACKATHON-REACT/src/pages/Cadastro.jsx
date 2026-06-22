@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import styles from './Cadastro.module.css';
+import logoImg from '../images/logo-padrao.png';
+import olhoAbertoIcon from '../icons/olhoaberto.png';
+import olhoFechadoIcon from '../icons/olhofechado.png';
 
 export default function Cadastro({ onNavigate }) {
   const [formData, setFormData] = useState({
@@ -109,7 +112,7 @@ export default function Cadastro({ onNavigate }) {
     <div className={styles.cadastroPage}>
       <header className={styles.logo}>
         <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>
-          <img src="/images/logo-padrao.png" alt="Logo" />
+          <img src={logoImg} alt="Logo" />
         </a>
       </header>
 
@@ -201,7 +204,7 @@ export default function Cadastro({ onNavigate }) {
                 required
               />
               <img
-                src={showPassword ? '/icons/olhoaberto.png' : '/icons/olhofechado.png'}
+                src={showPassword ? olhoAbertoIcon : olhoFechadoIcon}
                 alt="Mostrar senha"
                 className={styles.olhinho}
                 onClick={() => togglePasswordVisibility('password')}
@@ -219,7 +222,7 @@ export default function Cadastro({ onNavigate }) {
                 required
               />
               <img
-                src={showConfirmPassword ? '/icons/olhoaberto.png' : '/icons/olhofechado.png'}
+                src={showConfirmPassword ? olhoAbertoIcon : olhoFechadoIcon}
                 alt="Mostrar confirmar senha"
                 className={styles.olhinho}
                 onClick={() => togglePasswordVisibility('confirmPassword')}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './EsqueciSenha.module.css';
+import logoImg from '../images/logo-padrao.png';
 
 export default function EsqueciSenha({ onNavigate }) {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ export default function EsqueciSenha({ onNavigate }) {
       <header className={styles.header}>
         <div className={styles['logo-in']}>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>
-            <img src="/images/logo-padrao.png" alt="logo-infinity" className={styles['logo-in']} />
+            <img src={logoImg} alt="logo-infinity" className={styles['logo-in']} />
           </a>
         </div>
       </header>

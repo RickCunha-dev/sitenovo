@@ -12,6 +12,7 @@ from schemas import UserCreate, UserLogin, UserOut as User
 from security import create_access_token, get_current_user
 from passlib.context import CryptContext
 from fastapi.middleware.cors import CORSMiddleware
+from utils2 import enviar_email
 
 
 
@@ -42,12 +43,12 @@ app.add_middleware(
 
 @app.post("/register", status_code=201)
 async def register(user: UserCreate, db: Session = Depends(get_db)):
-    # if (
-    #     db.query(Usuario)
-    #     .filter((Usuario.cpf == user.cpf) | (Usuario.email == user.email))
-    #     .first()
-    # ):
-    #     raise HTTPException(status_code=409, detail="CPF ou email já cadastrado.")
+    if (
+        db.query(Usuario)
+        .filter((Usuario.cpf == user.cpf) | (Usuario.email == user.email))
+        .first()
+    ):
+        raise HTTPException(status_code=409, detail="CPF ou email já cadastrado.")
     password_hash = get_password_hash(user.password)
     novo_usuario = Usuario(
         nome_completo=user.nome_completo,
@@ -68,7 +69,7 @@ async def login(user: UserLogin, db: Session = Depends(get_db)):
         raise HTTPException(status_code=401, detail="CPF ou senha inválidos.")
     access_token = create_access_token(
         data={
-            "sub": usuario.id_usuario,
+            "sub": str(usuario.id_usuario),
             "tipo": "admin" if usuario.is_admin else "regular",
         }
     )
@@ -87,8 +88,15 @@ async def login(user: UserLogin, db: Session = Depends(get_db)):
 # implementar a parte de disparo de email
 
 @app.get("/recuperarsenha/{cpf}")
-def recover_password(cpf:str):
-    pass
+def recover_password(cpf: str, db: Session = Depends(get_db)):
+    usuario = db.query(Usuario).filter(Usuario.cpf == cpf).first()
+    if not usuario:
+        raise HTTPException(status_code=404, detail="CPF não encontrado.")
+    try:
+        enviar_email(usuario.email)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro ao enviar email: {str(e)}")
+    return {"message": "Email de recuperação enviado com sucesso."}
 
 if __name__ == "__main__":
     import uvicorn

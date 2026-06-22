@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import styles from './RedefinirSenha.module.css';
+import logoImg from '../images/logo-padrao.png';
+import redefinirImg from '../images/redefinir-senha.png';
+import olhoAbertoIcon from '../icons/olhoaberto.png';
+import olhoFechadoIcon from '../icons/olhofechado.png';
 
 export default function RedefinirSenha({ onNavigate }) {
   const [formData, setFormData] = useState({
@@ -37,14 +41,14 @@ export default function RedefinirSenha({ onNavigate }) {
       <header>
         <div className={styles['logo-in']}>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>
-            <img src="/images/logo-padrao.png" alt="logo-infinity" className={styles['logo-in']} />
+            <img src={logoImg} alt="logo-infinity" className={styles['logo-in']} />
           </a>
         </div>
       </header>
 
       <div className={styles.container}>
         <div className={styles.imagem}>
-          <img src="/images/redefinir-senha.png" alt="Ilustração de um cadeado e chave para redefinir a senha" />
+          <img src={redefinirImg} alt="Ilustração de um cadeado e chave para redefinir a senha" />
         </div>
 
         <div className={styles.formulario}>
@@ -62,7 +66,7 @@ export default function RedefinirSenha({ onNavigate }) {
                 required
               />
               <img 
-                src={showPassword.senha ? "/icons/olhoaberto.png" : "/icons/olhofechado.png"}
+                src={showPassword.senha ? olhoAbertoIcon : olhoFechadoIcon}
                 alt="Mostrar senha" 
                 className={styles.olhinho}
                 onClick={() => togglePasswordVisibility('senha')}
@@ -80,7 +84,7 @@ export default function RedefinirSenha({ onNavigate }) {
                 required
               />
               <img 
-                src={showPassword.confirmarSenha ? "/icons/olhoaberto.png" : "/icons/olhofechado.png"}
+                src={showPassword.confirmarSenha ? olhoAbertoIcon : olhoFechadoIcon}
                 alt="Mostrar senha" 
                 className={styles.olhinho}
                 onClick={() => togglePasswordVisibility('confirmarSenha')}

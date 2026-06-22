@@ -146,13 +146,11 @@ export default function Home({ onNavigate }) {
   // Funções do modal
   const openModal = (e) => {
     e.preventDefault();
-    console.log('Abrindo modal de privacidade'); // Debug
     setModalOpen(true);
-    document.body.style.overflow = 'hidden'; // Prevenir scroll
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
-    console.log('Fechando modal de privacidade'); // Debug
     setModalOpen(false);
     document.body.style.overflow = 'auto'; // Restaurar scroll
   };
