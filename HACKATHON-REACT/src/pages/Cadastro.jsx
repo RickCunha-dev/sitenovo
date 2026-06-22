@@ -222,7 +222,7 @@ export default function Cadastro({ onNavigate }) {
                 required
               />
               <img
-                src={showConfirmPassword ? olhoAbertoIcon : olhoFechadoIcon}
+                src={showConfirmPassword ? '/icons/olhoaberto.png' : '/icons/olhofechado.png'}
                 alt="Mostrar confirmar senha"
                 className={styles.olhinho}
                 onClick={() => togglePasswordVisibility('confirmPassword')}

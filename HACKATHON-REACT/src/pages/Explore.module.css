@@ -269,7 +269,7 @@ body.menu-open {
 .carrossel {
     width: 100%;
     height: 432px;
-    background-image: url("/images/explorar.png");
+    background-image: url("../images/explorar.png");
     background-size: cover;
     background-position: center;
     display: flex;

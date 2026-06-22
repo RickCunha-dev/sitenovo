@@ -4,6 +4,15 @@ import styles from './Blog.module.css';
 
 // Importações das imagens
 import logoImg from '../images/logo-padrao.png';
+import exameImg from '../images/exame.png';
+import getnjasImg from '../images/getninjas.png';
+import glassdoorImg from '../images/glassdoor.png';
+import smartsheetImg from '../images/smartsheet.png';
+import erroscomunsImg from '../images/erroscomuns_unife.png';
+import webshareImg from '../images/webshare.png';
+import semrushImg from '../images/semrush.png';
+import linkNacionalImg from '../images/link_nacional.png';
+import pontoTelImg from '../images/ponto_tel_ultima.png';
 
 const Blog = ({ onNavigate }) => {
   const { user, isAuthenticated, logout } = useAuth();
@@ -34,55 +43,55 @@ const Blog = ({ onNavigate }) => {
     {
       id: 1,
       title: "Como Criar um portfólio profissional em 5 passos",
-      image: "/images/exame.png",
+      image: exameImg,
       link: "https://exame.com/carreira/guia-de-carreira/5-dicas-para-criar-um-portfolio-profissional-atraente/?utm_source=chatgpt.com"
     },
     {
       id: 2,
       title: "Portfólio: porquê e quando é importante ter um",
-      image: "/images/getninjas.png",
+      image: getnjasImg,
       link: "https://blog.getninjas.com.br/portfolio-porque-e-quando-e-importante-ter-um/"
     },
     {
       id: 3,
       title: "Melhores plataformas para criar seu portfólio gratuito",
-      image: "/images/glassdoor.png",
+      image: glassdoorImg,
       link: "https://www.glassdoor.com.br/blog/5-sites-gratuitos-para-criar-portfolio-online/?utm_source=chatgpt.com"
     },
     {
       id: 4,
       title: "Dicas de especialistas para escrever uma descrição de projeto com modelos gratuitos",
-      image: "/images/smartsheet.png",
+      image: smartsheetImg,
       link: "https://pt.smartsheet.com/content/project-description"
     },
     {
       id: 5,
       title: "Erros comuns em portfólios de design e como evitar",
-      image: "/images/erroscomuns_unife.png",
+      image: erroscomunsImg,
       link: "https://www.unifecaf.com.br/post/10-erros-no-portfolio-que-podem-te-prejudicar?utm_source=chatgpt.com"
     },
     {
       id: 6,
       title: "Design responsivo: como garantir que seu portfólio funcione em qualquer tela",
-      image: "/images/webshare.png",
+      image: webshareImg,
       link: "https://www.webshare.com.br/blog/design-responsivo/?utm_source=chatgpt.com"
     },
     {
       id: 7,
       title: "Quem é seu público-alvo (recrutadores, clientes, agências)?",
-      image: "/images/semrush.png",
+      image: semrushImg,
       link: "https://pt.semrush.com/blog/publico-alvo/"
     },
     {
       id: 8,
       title: "O que é portfólio, quais os tipos e como criar um site de portfólio?",
-      image: "/images/link_nacional.png",
+      image: linkNacionalImg,
       link: "https://www.linknacional.com.br/blog/o-que-e-portfolio/?srsltid=AfmBOooq18EeMmyJKbBiOfmT5_XKV6Gr0gqGoBCmXQHHfaGGM1t1h30k"
     },
     {
       id: 9,
       title: "Portfólio profissional: o que é, tipos e como montar o seu para destacar sua experiência no mercado",
-      image: "/images/ponto_tel_ultima.png",
+      image: pontoTelImg,
       link: "https://www.pontotel.com.br/portfolio-profissional/"
     }
   ];
